@@ -32,31 +32,87 @@ if (codigo && jogadorId) {
         return [...mao.children].map((el, index) => el.classList.contains("selecionada") ? index : -1).filter(index => index >= 0);
     }
 
-    function renderSequencias() {
-        if (!estadoAtual || estadoAtual.tipo !== "buraco" || !seqAdversario || !seqPropria) return;
-        seqAdversario.innerHTML = "";
-        seqPropria.innerHTML = "";
+    function posicionarSequencias() {
+        if (!seqPropria) return;
 
-        /* No Buraco de 4 jogadores, a sua dupla fica sempre à DIREITA
-           da mesa (lado esquerdo da dupla adversária). */
-        seqPropria.style.right = "-270px";
+        // O primeiro jogador que baixar define o lado das sequências.
+        // A posição é relativa à mesa, considerando a ordem dos jogadores:
+        // 0 = baixo, 1 = esquerda, 2 = cima, 3 = direita.
+        const ids = estadoAtual?.ids || Object.keys(jogadores);
+        const primeiro = estadoAtual?.primeiroBaixador;
+        const indice = ids.indexOf(primeiro);
+
         seqPropria.style.left = "auto";
-        seqAdversario.style.left = "-270px";
-        seqAdversario.style.right = "auto";
+        seqPropria.style.right = "auto";
+        seqPropria.style.top = "38px";
+        seqPropria.style.bottom = "38px";
+        seqPropria.style.transform = "none";
+
+        if (indice === 0) {
+            // Jogador de baixo: a direita dele é o lado esquerdo da tela.
+            seqPropria.style.left = "-270px";
+        } else if (indice === 2) {
+            // Jogador de cima: a direita dele é o lado direito da tela.
+            seqPropria.style.right = "-270px";
+        } else if (indice === 1) {
+            // Jogador da esquerda: a direita dele fica acima da mesa.
+            seqPropria.style.top = "-190px";
+            seqPropria.style.bottom = "auto";
+            seqPropria.style.left = "50%";
+            seqPropria.style.transform = "translateX(-50%)";
+            seqPropria.style.width = "min(520px, 48vw)";
+            seqPropria.style.height = "150px";
+        } else if (indice === 3) {
+            // Jogador da direita: a direita dele fica abaixo da mesa.
+            seqPropria.style.top = "auto";
+            seqPropria.style.bottom = "-190px";
+            seqPropria.style.left = "50%";
+            seqPropria.style.transform = "translateX(-50%)";
+            seqPropria.style.width = "min(520px, 48vw)";
+            seqPropria.style.height = "150px";
+        } else {
+            // Compatibilidade com salas antigas sem primeiroBaixador.
+            seqPropria.style.left = "-270px";
+        }
+
+        seqPropria.style.borderLeft = "2px solid #2563eb";
+        seqPropria.style.borderRight = "1px solid #ddd";
+    }
+
+    function renderSequencias() {
+        if (!estadoAtual || estadoAtual.tipo !== "buraco" || !seqPropria) return;
+
+        // Todas as sequências ficam juntas no lado definido pelo primeiro jogador.
+        seqPropria.innerHTML = "";
+        if (seqAdversario) {
+            seqAdversario.innerHTML = "";
+            seqAdversario.style.display = "none";
+        }
+        seqPropria.style.display = "flex";
+        posicionarSequencias();
 
         const ids = estadoAtual.ids || Object.keys(jogadores);
-        const minhaDupla = duplaDe(ids, jogadorId);
+        const ordem = Array.isArray(estadoAtual.ordemBaixadas) ? estadoAtual.ordemBaixadas : [];
 
-        Object.entries(estadoAtual.baixadas || {}).forEach(([chave, lista]) => {
-            const dupla = Number(chave.replace("dupla_", ""));
-            const propria = dupla === minhaDupla;
-            const alvo = propria ? seqPropria : seqAdversario;
-            if (!Array.isArray(lista) || !lista.length) return;
+        // Estados antigos não possuem ordemBaixadas: montamos uma ordem de compatibilidade.
+        const itens = ordem.length
+            ? ordem
+            : Object.entries(estadoAtual.baixadas || {}).flatMap(([dupla, lista]) =>
+                (Array.isArray(lista) ? lista : []).map((_, grupo) => ({ dupla, grupo }))
+            );
 
+        itens.forEach((item, ordemIndex) => {
+            const dupla = typeof item.dupla === "string"
+                ? Number(item.dupla.replace("dupla_", ""))
+                : Number(item.dupla);
+            const grupoIndice = Number(item.grupo);
+            const lista = estadoAtual.baixadas?.[`dupla_${dupla}`] || [];
+            const grupo = lista[grupoIndice];
+            if (!Array.isArray(grupo) || !grupo.length) return;
+
+            const propria = dupla === duplaDe(ids, jogadorId);
             const section = document.createElement("div");
             section.className = `sequencia-grupo ${propria ? "sequencia-propria" : "sequencia-adversaria"}`;
-
-            /* Azul = sua dupla | Vermelho = dupla adversária */
             section.style.border = propria ? "2px solid #2563eb" : "2px solid #ef4444";
             section.style.background = propria ? "#eff6ff" : "#fef2f2";
             section.style.borderRadius = "8px";
@@ -65,30 +121,28 @@ if (codigo && jogadorId) {
             titulo.className = "sequencia-titulo";
             titulo.style.color = propria ? "#2563eb" : "#dc2626";
             titulo.textContent = propria
-                ? `Sua dupla${ids.length === 4 ? " — suas sequências" : ""}`
-                : `Dupla adversária — ${nomesDaDupla(ids, dupla) || `Dupla ${dupla + 1}`}`;
+                ? `Sequência da sua dupla`
+                : `Sequência da dupla adversária`;
             section.appendChild(titulo);
 
-            lista.forEach((grupo, grupoIndice) => {
-                const jogo = document.createElement("div");
-                jogo.className = `jogo-baixado ${propria ? "jogo-proprio" : ""}`;
-                jogo.style.border = propria ? "1px solid #60a5fa" : "1px solid #f87171";
+            const jogo = document.createElement("div");
+            jogo.className = `jogo-baixado ${propria ? "jogo-proprio" : ""}`;
+            jogo.style.border = propria ? "1px solid #60a5fa" : "1px solid #f87171";
+            jogo.dataset.ordem = ordemIndex;
 
-                if (propria) {
-                    jogo.title = "Clique para encaixar as cartas selecionadas";
-                    jogo.addEventListener("click", evento => {
-                        evento.stopPropagation();
-                        const indices = indicesSelecionados();
-                        if (estadoAtual.atual !== jogadorId || estadoAtual.etapa !== "descartar" || !indices.length) return;
-                        Buraco.acoesBuraco(salaRef, jogadorId).encaixar(grupoIndice, indices);
-                    });
-                }
+            if (propria) {
+                jogo.title = "Clique para encaixar as cartas selecionadas";
+                jogo.addEventListener("click", evento => {
+                    evento.stopPropagation();
+                    const indices = indicesSelecionados();
+                    if (estadoAtual.atual !== jogadorId || estadoAtual.etapa !== "descartar" || !indices.length) return;
+                    Buraco.acoesBuraco(salaRef, jogadorId).encaixar(grupoIndice, indices);
+                });
+            }
 
-                grupo.forEach(carta => jogo.appendChild(elementoCarta(carta)));
-                section.appendChild(jogo);
-            });
-
-            alvo.appendChild(section);
+            grupo.forEach(carta => jogo.appendChild(elementoCarta(carta)));
+            section.appendChild(jogo);
+            seqPropria.appendChild(section);
         });
     }
 
