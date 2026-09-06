@@ -11,7 +11,7 @@
 
 <main class="seletor">
     <header class="cabecalho">
-        <div><span>PRÓXIMA PARTIDA</span><h1>Escolha o jogo</h1></div>
+        <div><span>CONFIGURAÇÃO DA PARTIDA</span><h1>Escolha o jogo</h1></div>
         <div class="codigo">Sala <strong id="codigoSala">-----</strong></div>
     </header>
 
@@ -19,7 +19,7 @@
         <button class="jogo-card" data-jogo="truco">
             <div class="icone">🃏</div><div class="nome">Truco</div>
             <div class="descricao">Chegue a 12 pontos vencendo mãos e aumentando a aposta.</div>
-            <small class="jogadores">4 jogadores</small>
+            <small class="jogadores">2 jogadores (mano a mano) ou 4 (duplas)</small>
         </button>
         <button class="jogo-card" data-jogo="blackjack">
             <div class="icone">🂡</div><div class="nome">Blackjack</div>
@@ -34,7 +34,7 @@
         <button class="jogo-card" data-jogo="buraco">
             <div class="icone">♦️</div><div class="nome">Buraco</div>
             <div class="descricao">Forme sequências e canastras para pontuar.</div>
-            <small class="jogadores">2 ou 4 jogadores</small>
+            <small class="jogadores">2 (mano a mano) ou 4 (duplas)</small>
         </button>
         <button class="jogo-card" data-jogo="poker">
             <div class="icone">♣️</div><div class="nome">Poker</div>
@@ -51,11 +51,11 @@
     <p id="mensagem" class="mensagem"></p>
 
     <footer>
-        <button id="btnVoltar" class="voltar">Voltar</button>
-        <button id="btnConfirmar" class="confirmar" disabled>Confirmar jogo</button>
+        <button id="btnVoltar" class="voltar">Voltar para a sala</button>
+        <button id="btnConfirmar" class="confirmar" disabled>Escolher jogo</button>
     </footer>
 </main>
 
-<script type="module" src="js/seletor.js?v=2"></script>
+<script type="module" src="js/seletor.js?v=3"></script>
 </body>
 </html>
