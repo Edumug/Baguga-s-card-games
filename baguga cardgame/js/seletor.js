@@ -19,6 +19,7 @@ const btnConfirmar = document.getElementById("btnConfirmar");
 const btnVoltar = document.getElementById("btnVoltar");
 
 codigoSala.textContent = codigo;
+btnConfirmar.textContent = "Escolher jogo";
 
 const variacoes = {
     truco: [["padrao", "Truco Padrão"], ["paulista", "Truco Paulista"], ["mineiro", "Truco Mineiro"]],
@@ -26,6 +27,22 @@ const variacoes = {
     pife: [["padrao", "Pife Tradicional"]],
     buraco: [["aberto", "Buraco Aberto"], ["fechado", "Buraco Fechado"], ["stbl", "Buraco Fechado STBL"]],
     poker: [["texas", "Texas Hold'em"]]
+};
+
+const limites = {
+    truco: [2, 4],
+    blackjack: [1, 7],
+    pife: [2, 4],
+    buraco: [2, 4],
+    poker: [2, 8]
+};
+
+const textosJogadores = {
+    truco: "2 jogadores (mano a mano) ou 4 (duplas)",
+    blackjack: "1 a 7 jogadores + dealer",
+    pife: "2 a 4 jogadores",
+    buraco: "2 (mano a mano) ou 4 (duplas)",
+    poker: "2 a 8 jogadores"
 };
 
 let jogoSelecionado = null;
@@ -40,22 +57,28 @@ function atualizarVariacoes() {
     });
 }
 
+function selecionarCard(card, variacaoAnterior = null) {
+    cards.forEach(outro => outro.classList.remove("selecionado"));
+    card.classList.add("selecionado");
+    jogoSelecionado = card.dataset.jogo;
+    atualizarVariacoes();
+
+    if (variacaoAnterior && [...variacao.options].some(o => o.value === variacaoAnterior)) {
+        variacao.value = variacaoAnterior;
+    }
+
+    btnConfirmar.disabled = false;
+    const jogadoresTexto = card.querySelector(".jogadores");
+    if (jogadoresTexto) jogadoresTexto.textContent = textosJogadores[jogoSelecionado] || "";
+}
+
 cards.forEach(card => {
-    card.addEventListener("click", () => {
-        cards.forEach(outro => outro.classList.remove("selecionado"));
-        card.classList.add("selecionado");
-        jogoSelecionado = card.dataset.jogo;
-        atualizarVariacoes();
-        btnConfirmar.disabled = false;
-    });
+    const texto = card.querySelector(".jogadores");
+    if (texto) texto.textContent = textosJogadores[card.dataset.jogo] || "";
+    card.addEventListener("click", () => selecionarCard(card));
 });
 
-btnConfirmar.addEventListener("click", async () => {
-    if (!jogoSelecionado) return;
-
-    btnConfirmar.disabled = true;
-    mensagem.textContent = "Iniciando partida...";
-
+async function carregarSala() {
     try {
         const snapshot = await get(salaRef);
         if (!snapshot.exists()) {
@@ -64,58 +87,82 @@ btnConfirmar.addEventListener("click", async () => {
         }
 
         const sala = snapshot.val();
-        sala.jogadores ??= {};
+        const jogador = sala.jogadores?.[jogadorId];
+        const souDono = jogador?.dono === true || sala.dono === jogadorId;
 
-        if (!sala.jogadores[jogadorId]) {
-            const ordens = Object.values(sala.jogadores).map(j => j.ordem || 0);
-            const jogadorRestaurado = {
-                nome: sessionStorage.getItem("nomeJogador") || "Jogador",
-                tipo: "humano",
-                dono: sala.dono === jogadorId,
-                pontos: 0,
-                ordem: sala.dono === jogadorId ? 0 : Math.max(...ordens, 0) + 1
-            };
-            await update(ref(database, `salas/${codigo}/jogadores/${jogadorId}`), jogadorRestaurado);
-            sala.jogadores[jogadorId] = jogadorRestaurado;
+        if (!souDono) {
+            mensagem.textContent = "Somente o dono da sala pode escolher o jogo.";
+            btnConfirmar.disabled = true;
+            cards.forEach(card => card.disabled = true);
+            return;
         }
 
-        const jogador = sala.jogadores[jogadorId];
-        const souDono = jogador?.dono === true || sala.dono === jogadorId;
-        if (!souDono) {
-            mensagem.textContent = "Somente o dono pode iniciar.";
+        if (sala.status === "jogando") {
+            window.location.href = `jogo.html?codigo=${codigo}`;
+            return;
+        }
+
+        if (sala.jogo) {
+            const cardAtual = [...cards].find(card => card.dataset.jogo === sala.jogo);
+            if (cardAtual) selecionarCard(cardAtual, sala.variacao);
+            mensagem.textContent = "Você pode trocar o jogo antes de iniciar a partida.";
+        }
+    } catch (erro) {
+        console.error(erro);
+        mensagem.textContent = "Erro ao carregar a sala.";
+    }
+}
+
+btnConfirmar.addEventListener("click", async () => {
+    if (!jogoSelecionado) return;
+
+    btnConfirmar.disabled = true;
+    mensagem.textContent = "Salvando escolha...";
+
+    try {
+        const snapshot = await get(salaRef);
+        if (!snapshot.exists()) {
+            mensagem.textContent = "Sala não encontrada.";
             btnConfirmar.disabled = false;
+            return;
+        }
+
+        const sala = snapshot.val();
+        const jogador = sala.jogadores?.[jogadorId];
+        const souDono = jogador?.dono === true || sala.dono === jogadorId;
+
+        if (!souDono) {
+            mensagem.textContent = "Somente o dono pode escolher o jogo.";
+            btnConfirmar.disabled = false;
+            return;
+        }
+
+        if (sala.status === "jogando") {
+            window.location.href = `jogo.html?codigo=${codigo}`;
             return;
         }
 
         const quantidade = Object.keys(sala.jogadores || {}).length;
-        const limites = {
-            // 2 = mano a mano; 4 = duas duplas.
-            truco: [2, 4],
-            buraco: [2, 4],
-            poker: [2, 8],
-            blackjack: [1, 7],
-            pife: [2, 4]
-        };
-        const [minimo, maximo] = limites[jogoSelecionado] || [2, 4];
+        const [minimo, maximo] = limites[jogoSelecionado];
 
         if (quantidade < minimo || quantidade > maximo) {
-            mensagem.textContent = `${jogoSelecionado === "blackjack" ? "Blackjack" : "Este jogo"} aceita ${minimo === maximo ? minimo : `${minimo} a ${maximo}`} jogador${maximo === 1 ? "" : "es"}.`;
+            mensagem.textContent = `${jogoSelecionado === "blackjack" ? "Blackjack" : jogoSelecionado[0].toUpperCase() + jogoSelecionado.slice(1)} aceita ${minimo === maximo ? minimo : `${minimo} a ${maximo}`} jogador${maximo === 1 ? "" : "es"}. Há ${quantidade} na sala.`;
             btnConfirmar.disabled = false;
             return;
         }
 
+        // Escolher o jogo NÃO inicia a partida. O status continua aguardando.
         await update(salaRef, {
-            [`jogadores/${jogadorId}`]: jogador,
             jogo: jogoSelecionado,
             variacao: variacao.value,
             estado: null,
-            status: "jogando"
+            status: sala.status === "jogando" ? "jogando" : "aguardando"
         });
 
-        window.location.href = `jogo.html?codigo=${codigo}`;
+        window.location.href = `sala.html?codigo=${codigo}`;
     } catch (erro) {
         console.error(erro);
-        mensagem.textContent = "Erro ao iniciar a partida.";
+        mensagem.textContent = "Erro ao salvar a escolha.";
         btnConfirmar.disabled = false;
     }
 });
@@ -123,3 +170,5 @@ btnConfirmar.addEventListener("click", async () => {
 btnVoltar.addEventListener("click", () => {
     window.location.href = `sala.html?codigo=${codigo}`;
 });
+
+carregarSala();
