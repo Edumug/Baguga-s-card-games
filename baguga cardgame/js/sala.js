@@ -13,14 +13,11 @@ if (!codigo || !jogadorId) {
 const codigoExibido = document.getElementById("codigoExibido");
 const listaJogadores = document.getElementById("listaJogadores");
 const btnAdicionarBot = document.getElementById("btnAdicionarBot");
-const btnEscolherJogo = document.getElementById("btnEscolherJogo");
 const btnIniciar = document.getElementById("btnIniciar");
 const btnCopiarCodigo = document.getElementById("btnCopiarCodigo");
 const btnSair = document.getElementById("btnSair");
 const mensagem = document.getElementById("mensagemSala");
 const statusTexto = document.getElementById("statusTexto");
-const jogoEscolhido = document.getElementById("jogoEscolhido");
-const variacaoEscolhida = document.getElementById("variacaoEscolhida");
 
 const salaRef = ref(database, `salas/${codigo}`);
 const meuRef = ref(database, `salas/${codigo}/jogadores/${jogadorId}`);
@@ -56,6 +53,38 @@ const limites = {
 };
 
 let souDono = false;
+let btnEscolherJogo = document.getElementById("btnEscolherJogo");
+let jogoEscolhido = document.getElementById("jogoEscolhido");
+let variacaoEscolhida = document.getElementById("variacaoEscolhida");
+
+// Compatibilidade com a versão antiga do sala.html: cria os elementos novos automaticamente.
+if (!jogoEscolhido) {
+    jogoEscolhido = document.createElement("h2");
+    jogoEscolhido.id = "jogoEscolhido";
+    jogoEscolhido.textContent = "Nenhum jogo escolhido";
+    const configuracao = btnIniciar?.parentElement;
+    const titulo = configuracao?.querySelector("h2");
+    if (titulo) titulo.replaceWith(jogoEscolhido);
+}
+
+if (!variacaoEscolhida) {
+    variacaoEscolhida = document.createElement("p");
+    variacaoEscolhida.id = "variacaoEscolhida";
+    variacaoEscolhida.textContent = "Escolha o jogo antes de iniciar a partida.";
+    const configuracao = btnIniciar?.parentElement;
+    const paragrafo = configuracao?.querySelector("p");
+    if (paragrafo) paragrafo.replaceWith(variacaoEscolhida);
+}
+
+if (!btnEscolherJogo && btnIniciar) {
+    btnEscolherJogo = document.createElement("button");
+    btnEscolherJogo.id = "btnEscolherJogo";
+    btnEscolherJogo.className = btnIniciar.className;
+    btnEscolherJogo.textContent = "Escolher jogo";
+    btnIniciar.parentElement.insertBefore(btnEscolherJogo, btnIniciar);
+}
+
+btnIniciar.textContent = "Iniciar partida";
 
 function limiteValido(jogo, quantidade) {
     const [minimo, maximo] = limites[jogo] || [2, 4];
@@ -64,20 +93,23 @@ function limiteValido(jogo, quantidade) {
 
 function textoLimite(jogo) {
     const [minimo, maximo] = limites[jogo] || [2, 4];
-    return minimo === maximo ? `${minimo} jogador${minimo === 1 ? "" : "es"}` : `${minimo} a ${maximo} jogadores`;
+    return minimo === maximo
+        ? `${minimo} jogador${minimo === 1 ? "" : "es"}`
+        : `${minimo} a ${maximo} jogadores`;
 }
 
 function atualizarConfiguracao(sala, quantidade) {
     const jogo = sala.jogo;
-    const variacao = sala.variacao;
 
     if (jogo) {
         jogoEscolhido.textContent = nomesJogos[jogo] || jogo;
-        variacaoEscolhida.textContent = `Variação: ${nomesVariacoes[variacao] || variacao || "Padrão"}. ${souDono ? "Você pode alterar a escolha antes de iniciar." : "Aguardando o dono iniciar a partida."}`;
+        variacaoEscolhida.textContent = `Variação: ${nomesVariacoes[sala.variacao] || sala.variacao || "Padrão"}.`;
         btnEscolherJogo.textContent = souDono ? "Alterar jogo" : "Jogo escolhido";
     } else {
         jogoEscolhido.textContent = "Nenhum jogo escolhido";
-        variacaoEscolhida.textContent = souDono ? "Escolha o jogo primeiro. A partida só começa quando você clicar em iniciar." : "Aguardando o dono escolher o jogo.";
+        variacaoEscolhida.textContent = souDono
+            ? "Escolha o jogo primeiro. A partida só começa quando você clicar em iniciar."
+            : "Aguardando o dono escolher o jogo.";
         btnEscolherJogo.textContent = "Escolher jogo";
     }
 
@@ -85,8 +117,7 @@ function atualizarConfiguracao(sala, quantidade) {
     btnIniciar.disabled = !souDono || sala.status === "jogando" || !jogo || !limiteValido(jogo, quantidade);
 
     if (jogo && !limiteValido(jogo, quantidade)) {
-        const [minimo, maximo] = limites[jogo];
-        mensagem.textContent = `${nomesJogos[jogo]} precisa de ${textoLimite(jogo)}. Há ${quantidade} na sala.`;
+        mensagem.textContent = `${nomesJogos[jogo] || jogo} precisa de ${textoLimite(jogo)}. Há ${quantidade} na sala.`;
     }
 }
 
@@ -133,7 +164,11 @@ onValue(salaRef, async snapshot => {
 
     const quantidade = Object.keys(jogadores).length;
     btnAdicionarBot.disabled = !souDono || quantidade >= 8 || sala.status === "jogando";
-    statusTexto.textContent = sala.status === "jogando" ? "Partida iniciada" : sala.jogo ? "Jogo escolhido" : quantidade >= 1 ? "Pronto para configurar" : "Aguardando jogadores";
+    statusTexto.textContent = sala.status === "jogando"
+        ? "Partida iniciada"
+        : sala.jogo
+            ? "Jogo escolhido"
+            : quantidade >= 1 ? "Pronto para configurar" : "Aguardando jogadores";
 
     atualizarConfiguracao(sala, quantidade);
 
