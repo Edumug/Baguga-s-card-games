@@ -13,8 +13,17 @@
     <header class="topo">
         <div><span class="label">PARTIDA</span><strong id="nomeJogo">Carregando...</strong></div>
         <div>Sala: <strong id="codigoSala">-----</strong></div>
+        <button id="btnTutorial" class="btn-tutorial" title="Tutorial">!</button>
         <button id="btnSair">Sair</button>
     </header>
+
+    <div id="tutorialJogo" class="tutorial-overlay escondido">
+        <div class="tutorial-painel">
+            <button id="fecharTutorial" class="fechar-tutorial" title="Fechar">×</button>
+            <h2>Como jogar?</h2>
+            <div id="textoTutorial"></div>
+        </div>
+    </div>
 
     <section id="jogadorSuperior" class="jogador jogador-superior">
         <div class="avatar">👤</div>
@@ -88,5 +97,6 @@
 <script type="module" src="js/jogo.js?v=8"></script>
 <script type="module" src="js/buraco-ui.js?v=2"></script>
 <script type="module" src="js/cartas-outros.js?v=2"></script>
+<script src="js/tutorial.js?v=1"></script>
 </body>
 </html>
