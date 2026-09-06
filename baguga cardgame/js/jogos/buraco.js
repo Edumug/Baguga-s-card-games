@@ -30,17 +30,13 @@ function valorCarta(carta) { return CARTA[carta.valor] || 0; }
 
 function sequenciaValida(cartas) {
     if (cartas.length < 3) return false;
-
     const naturais = cartas.filter(carta => !ehCuringaNecessario(carta, cartas));
     const curingas = cartas.filter(carta => ehCuringaNecessario(carta, cartas));
-
     if (!naturais.length) return false;
     if (!naturais.every(carta => carta.naipe === naturais[0].naipe)) return false;
     if (curingas.length > 1) return false;
-
     const ranks = naturais.map(rank).sort((a, b) => a - b);
     if (new Set(ranks).size !== ranks.length) return false;
-
     let lacunas = 0;
     for (let i = 1; i < ranks.length; i++) lacunas += ranks[i] - ranks[i - 1] - 1;
     return lacunas <= curingas.length;
@@ -75,19 +71,18 @@ function inicializarDuplas(estado) {
         estado.pontos[chave] ??= 0;
         estado.mortosPegos[chave] ??= false;
     }
+    estado.ordemBaixadas ??= [];
 }
 
 function podeUsarTopo(estado, jogadorId) {
     const topo = estado.descarte.at(-1);
     if (!topo) return false;
     const mao = estado.maos[jogadorId] || [];
-
     for (let i = 0; i < mao.length; i++) {
         for (let j = i + 1; j < mao.length; j++) {
             if (jogoValido([topo, mao[i], mao[j]], estado)) return true;
         }
     }
-
     const chave = chaveDupla(estado, jogadorId);
     for (const grupo of estado.baixadas[chave] || []) {
         if (mao.some(carta => jogoValido([...grupo, topo, carta], estado))) return true;
@@ -112,7 +107,6 @@ function entregarMorto(estado, jogadorId) {
     const dupla = duplaDe(estado.ids, jogadorId);
     const chave = `dupla_${dupla}`;
     if (estado.mortosPegos[chave] || !estado.mortos[dupla]?.length) return false;
-
     estado.maos[jogadorId].push(...estado.mortos[dupla]);
     estado.mortos[dupla] = [];
     estado.mortosPegos[chave] = true;
@@ -144,7 +138,6 @@ function encerrar(estado, js, jogadorId) {
     const chave = chaveDupla(estado, jogadorId);
     atualizarPontuacao(estado, jogadorId);
     if (!podeBater(estado, chave)) return false;
-
     finalizarPontuacao(estado, chave);
     const dupla = duplaDe(estado.ids, jogadorId);
     estado.fim = true;
@@ -157,7 +150,6 @@ export function criarEstado(ids, variacao = "aberto") {
     const deck = embaralhar(baralho(variacao));
     const maos = Object.fromEntries(ids.map(id => [id, Array.from({ length: 11 }, () => deck.pop())]));
     const mortos = [Array.from({ length: 11 }, () => deck.pop()), Array.from({ length: 11 }, () => deck.pop())];
-
     const estado = {
         tipo: "buraco",
         modo: ids.length === 4 ? "duplas" : "mano-a-mano",
@@ -172,12 +164,12 @@ export function criarEstado(ids, variacao = "aberto") {
         etapa: "comprar",
         cartaJustificativa: null,
         baixadas: {},
+        ordemBaixadas: [],
         canastras: {},
         pontos: {},
         fim: false,
         resultado: ""
     };
-
     inicializarDuplas(estado);
     return estado;
 }
@@ -187,7 +179,6 @@ export function acoesBuraco(salaRef, jogadorId) {
         comprar: () => executarTransacao(salaRef, estado => {
             if (estado.tipo !== "buraco" || estado.atual !== jogadorId || estado.fim || estado.etapa !== "comprar") return;
             inicializarDuplas(estado);
-
             if (!estado.maos[jogadorId].length && entregarMorto(estado, jogadorId)) {
                 estado.etapa = "descartar";
                 return;
@@ -198,7 +189,6 @@ export function acoesBuraco(salaRef, jogadorId) {
                 estado.resultado = "O monte acabou. A rodada terminou.";
                 return;
             }
-
             estado.maos[jogadorId].push(estado.deck.pop());
             estado.etapa = "descartar";
         }),
@@ -214,18 +204,17 @@ export function acoesBuraco(salaRef, jogadorId) {
         baixar: indices => executarTransacao(salaRef, (estado, js) => {
             if (estado.tipo !== "buraco" || estado.atual !== jogadorId || estado.fim || estado.etapa !== "descartar") return;
             inicializarDuplas(estado);
-
             const unicos = [...new Set(indices)].sort((a, b) => b - a);
             const cartas = unicos.map(indice => estado.maos[jogadorId]?.[indice]);
             if (cartas.some(carta => !carta) || !jogoValido(cartas, estado)) return;
             if (estado.cartaJustificativa && !cartas.some(carta => carta.id === estado.cartaJustificativa)) return;
-
             const chave = chaveDupla(estado, jogadorId);
             unicos.forEach(indice => estado.maos[jogadorId].splice(indice, 1));
             estado.baixadas[chave].push(cartas);
+            const grupo = estado.baixadas[chave].length - 1;
+            estado.ordemBaixadas.push({ dupla: chave, grupo, jogadorId });
             if (estado.cartaJustificativa) estado.cartaJustificativa = null;
             atualizarPontuacao(estado, jogadorId);
-
             if (!estado.maos[jogadorId].length && !estado.mortosPegos[chave]) entregarMorto(estado, jogadorId);
             if (!estado.maos[jogadorId].length) encerrar(estado, js, jogadorId);
         }),
@@ -233,20 +222,16 @@ export function acoesBuraco(salaRef, jogadorId) {
         encaixar: (grupoIndice, indices) => executarTransacao(salaRef, (estado, js) => {
             if (estado.tipo !== "buraco" || estado.atual !== jogadorId || estado.fim || estado.etapa !== "descartar") return;
             inicializarDuplas(estado);
-
             const chave = chaveDupla(estado, jogadorId);
             const grupo = estado.baixadas[chave]?.[grupoIndice];
             if (!grupo) return;
-
             const unicos = [...new Set(indices)].sort((a, b) => b - a);
             const cartas = unicos.map(indice => estado.maos[jogadorId]?.[indice]);
             if (cartas.some(carta => !carta) || !jogoValido([...grupo, ...cartas], estado)) return;
-
             unicos.forEach(indice => estado.maos[jogadorId].splice(indice, 1));
             grupo.push(...cartas);
             if (estado.cartaJustificativa && cartas.some(carta => carta.id === estado.cartaJustificativa)) estado.cartaJustificativa = null;
             atualizarPontuacao(estado, jogadorId);
-
             if (!estado.maos[jogadorId].length && !estado.mortosPegos[chave]) entregarMorto(estado, jogadorId);
             if (!estado.maos[jogadorId].length) encerrar(estado, js, jogadorId);
         }),
@@ -255,13 +240,11 @@ export function acoesBuraco(salaRef, jogadorId) {
             if (estado.tipo !== "buraco" || estado.atual !== jogadorId || estado.fim || estado.etapa !== "descartar") return;
             inicializarDuplas(estado);
             if (estado.cartaJustificativa) return;
-
             const carta = estado.maos[jogadorId]?.[indice];
             if (!carta) return;
             estado.maos[jogadorId].splice(indice, 1);
             estado.descarte.push(carta);
             atualizarPontuacao(estado, jogadorId);
-
             if (estado.maos[jogadorId].length && !encerrar(estado, js, jogadorId)) {
                 estado.atual = proximoJogador(estado.ids, jogadorId);
                 estado.etapa = "comprar";
