@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparativo de Modalidades — Buraco, Tranca, Truco | Jogos do Rei</title>
+  <meta name="description" content="Tabela comparativa completa das modalidades do Jogos do Rei: Buraco Aberto, Buraco Fechado, STBL, Tranca e Truco. Veja cartas, regras e diferenças.">
+  <meta name="keywords" content="comparativo buraco, diferenças buraco fechado aberto, STBL vs buraco, tranca vs buraco, truco paulista, tabela comparativa jogos de cartas">
+  <meta name="author" content="Jogos do Rei">
+  <meta property="og:title" content="Comparativo Completo das Modalidades — Jogos do Rei">
+  <meta property="og:description" content="Descubra as diferenças entre Buraco Aberto, Buraco Fechado, STBL, Tranca e Truco em uma tabela visual clara.">
+  <meta property="og:url" content="https://jogosdorei.github.io/glossario-buraco/comparativo.html">
+  <link rel="canonical" href="https://jogosdorei.github.io/glossario-buraco/comparativo.html">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f5f0;
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #8a6d3b 0%, #b38b4d 100%);
+      color: white;
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+    header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 20px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+    }
+    nav {
+      background: #7d5d34;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      padding: 0.65rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: background 0.15s, color 0.15s;
+    }
+    nav a:hover, nav a.active {
+      background: rgba(255,255,255,0.12);
+      color: white;
+    }
+    nav a.active {
+      border-bottom: 3px solid #e6d0a8;
+    }
+    .container { max-width: 980px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .intro {
+      background: white;
+      border-left: 4px solid #b38b4d;
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+    .intro a { color: #8a6d3b; font-weight: 600; text-decoration: none; }
+    .intro a:hover { text-decoration: underline; }
+    h2 {
+      font-size: 1.5rem;
+      color: #7d5d34;
+      border-bottom: 2px solid #e6d0a8;
+      padding-bottom: 0.5rem;
+      margin: 2.5rem 0 1.25rem;
+    }
+    h2 span { font-size: 1.1rem; margin-right: 0.5rem; }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      margin-bottom: 2rem;
+    }
+    .comparison-table th {
+      background: #8a6d3b;
+      color: white;
+      padding: 0.85rem 1rem;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+      vertical-align: middle;
+    }
+    .comparison-table th.feature {
+      background: #7d5d34;
+      text-align: left;
+    }
+    .comparison-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #f0e8d8;
+      font-size: 0.92rem;
+      vertical-align: top;
+    }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:nth-child(even) td { background: #fdfaf5; }
+    .comparison-table .modalidade-name {
+      font-weight: 700;
+      color: #8a6d3b;
+      font-size: 1rem;
+      text-align: center;
+    }
+    .comparison-table .emoji { font-size: 1.2rem; margin-right: 0.3rem; }
+    .yes { color: #27ae60; font-weight: 600; }
+    .no { color: #c0392b; font-weight: 600; }
+    .value { color: #2c2c2c; font-weight: 500; }
+    .note { font-size: 0.85rem; color: #666; margin-top: 0.2rem; }
+    .cta {
+      background: linear-gradient(135deg, #8a6d3b, #b38b4d);
+      color: white;
+      border-radius: 12px;
+      padding: 2rem 2rem;
+      text-align: center;
+      margin: 3rem 0 2rem;
+    }
+    .cta h2 { color: white; border: none; margin: 0 0 0.75rem; font-size: 1.4rem; }
+    .cta p { margin-bottom: 1.25rem; opacity: 0.9; font-size: 1rem; }
+    .cta a {
+      display: inline-block;
+      background: white;
+      color: #8a6d3b;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: opacity 0.15s;
+    }
+    .cta a:hover { opacity: 0.85; }
+    footer {
+      background: #2c2c2c;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+    footer a { color: #e6d0a8; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .tip {
+      background: #fff8e1;
+      border-left: 4px solid #ffc107;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.95rem;
+    }
+    .tip strong { color: #8a6d3b; }
+    @media (max-width: 768px) {
+      .comparison-table { display: block; overflow-x: auto; }
+      nav { flex-wrap: wrap; }
+      nav a { padding: 0.5rem 1rem; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📋 Comparativo de Modalidades</h1>
+  <p>Buraco Aberto vs Buraco Fechado vs STBL vs Tranca vs Truco — todas as diferenças em uma tabela</p>
+  <span class="badge">Baseado nas regras oficiais do Jogos do Rei • Atualizado em 2026</span>
+</header>
+
+<nav>
+  <a href="./index.html">🃏 Buraco</a>
+  <a href="./stbl.html">♠️ STBL</a>
+  <a href="./tranca.html">🔒 Tranca</a>
+  <a href="./truco.html">⚔️ Truco</a>
+  <a href="./sueca.html">🎴 Sueca</a>
+  <a href="./domino.html">🁢 Dominó</a>
+  <a href="./comparativo.html" class="active">📋 Comparativo</a>
+</nav>
+
+<div class="container">
+
+  <div class="intro">
+    <p>O <strong>Jogos do Rei</strong> oferece cinco modalidades principais de jogos de cartas, cada uma com regras próprias que mudam completamente a estratégia. Esta tabela compara lado a lado as características de cada uma, com base nas <a href="https://www.jogosdorei.com.br/regras-buraco.php" target="_blank" rel="noopener">regras oficiais</a> do site.</p>
+    <p>Use este guia para escolher qual jogo combina mais com seu estilo — seja você fã de estratégia profunda (STBL), de blefes (Truco) ou de uma partida rápida (Tranca).</p>
+  </div>
+
+  <h2><span>📊</span> Tabela Comparativa — 5 Modalidades</h2>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th class="feature">Característica</th>
+        <th><span class="emoji">🃏</span><br>Buraco Aberto</th>
+        <th><span class="emoji">🔒</span><br>Buraco Fechado</th>
+        <th><span class="emoji">🎯</span><br>STBL</th>
+        <th><span class="emoji">♠️</span><br>Tranca</th>
+        <th><span class="emoji">⚔️</span><br>Truco Paulista</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="feature"><strong>Cartas</strong></td>
+        <td class="value">104<br><span class="note">2 baralhos sem Curingão</span></td>
+        <td class="value">108<br><span class="note">2 baralhos com Curingão</span></td>
+        <td class="value">108<br><span class="note">2 baralhos com Curingão</span></td>
+        <td class="value">104<br><span class="note">2 baralhos sem Curingão</span></td>
+        <td class="value">40<br><span class="note">1 baralho sem 8,9,10,Curingão</span></td>
+      </tr>
+      <tr>
+        <td class="feature"><strong>Curingão (Joker)</strong></td>
+        <td class="no">❌ Não tem</td>
+        <td class="yes">✅ 50 pontos</td>
+        <td class="yes">✅ 50 pontos</td>
+        <td class="no">❌ Não tem</td>
+        <td class="no">❌ Não tem</td>
+      </tr>
+      <tr>
+        <td class="feature"><strong>Curinga (carta 2)</strong></td>
+        <td class="yes">✅ Sim</td>
+        <td class="yes">✅ Sim</td>
+        <td class="yes">✅ Sim</td>
+        <td class="yes">✅ Sim</td>
+        <td class="no">❌ Não</td>
+      </tr>
+      <tr>
+        <td class="feature"><strong>Trincas permitidas</strong><br><span class="note">3+ cartas do mesmo valor</span></td>
+        <td class="no">❌ Não</td>
+        <td class="yes">✅ Sim</td>
+        <td class="no">❌ Não</td>
+        <td class="yes">✅ Sim</td>
+        <td class="no">❌ Não se aplica</td>
+      </tr>
+      <tr>
+        <td class="feature"><strong>Lixo visível</strong><br><span class="note">Descarte na mesa</span></td>
+        <td class="yes">✅ Tudo</td>
+        <td class="value">Apenas topo<br><span class="note">última carta</span></td>
+        <td class="value">Apenas topo<br><span class="note">última carta</span></td>
+        <td class="yes">✅ Tudo</td>
+        <td class="no">❌ Não tem lixo</td>
+      </tr>
+      <tr>
+        <td class="feature"><strong>Para bater (ganhar rodada)</strong></td>
+        <td class="value">Canastra limpa obrigatória</td>
+        <td class="value">Canastra suja basta</td>
+        <td class="value">Canastra limpa obrigatória</td>
+        <td class="value">Canastra limpa obrigatória</td>
+        <td class="value">Levar 2 das 3 rodadas<br><span class="note">melhor de 3</span></td>
+      </tr>
+      <tr>
+        <td class="feature"><strong>Morto (cartas extras)</strong></td>
+        <td class="yes">✅ 2 mortos de 11 cartas</td>
+        <td class="yes">✅ 2 mortos de 11 cartas</td>
+        <td class="yes">✅ 2 mortos de 11 cartas</td>
+        <td class="yes">✅ 2 mortos de 11 cartas</td>
+        <td class="no">❌ Não tem</td>
+      </tr>
+      <tr>
+        <td class="feature"><strong>Jogadores por mesa</strong></td>
+        <td class="value">2 ou 4</td>
+        <td class="value">2 ou 4</td>
+        <td class="value">2 ou 4</td>
+        <td class="value">2 ou 4</td>
+        <td class="value">4 (sempre duplas)</td>
+      </tr>
+      <tr>
+        <td class="feature"><strong>Cartas iniciais por jogador</strong></td>
+        <td class="value">11</td>
+        <td class="value">11</td>
+        <td class="value">11</td>
+        <td class="value">11</td>
+        <td class="value">3</td>
+      </tr>
+      <tr>
+        <td class="feature"><strong>Regras especiais</strong></td>
+        <td class="value">Clássico, mais jogado</td>
+        <td class="value">Curingão vale 50 pts</td>
+        <td class="value">Sem trinca + bate limpo</td>
+        <td class="value">3 preto tranca mesa<br>3 vermelho ±100 pts</td>
+        <td class="value">Manilhas, vira, truco, seis, nove, doze, mão de onze</td>
+      </tr>
+      <tr>
+        <td class="feature"><strong>Complexidade estratégica</strong></td>
+        <td class="value">Média</td>
+        <td class="value">Média-alta</td>
+        <td class="value">Alta</td>
+        <td class="value">Média-alta</td>
+        <td class="value">Alta (blefe, sinais)</td>
+      </tr>
+      <tr>
+        <td class="feature"><strong>Tempo médio de partida</strong></td>
+        <td class="value">30–50 min</td>
+        <td class="value">40–60 min</td>
+        <td class="value">45–70 min</td>
+        <td class="value">35–55 min</td>
+        <td class="value">10–20 min</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tip">
+    <p><strong>💡 Dica rápida:</strong> Se você nunca jogou no Jogos do Rei, comece pelo <strong>Buraco Aberto</strong> — é a modalidade mais popular e tem regras mais diretas. Depois experimente a <strong>Tranca</strong> (com suas cartas 3 especiais) e o <strong>STBL</strong> (para um desafio estratégico maior). O <strong>Truco</strong> é um jogo completamente diferente, ideal para quem gosta de blefes e leitura de adversários.</p>
+  </div>
+
+  <h2><span>🎮</span> Como Escolher a Modalidade Certa</h2>
+
+  <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: white; border-radius: 10px; padding: 1.25rem 1.5rem; border-top: 3px solid #8a6d3b;">
+      <h3 style="color: #7d5d34; margin-bottom: 0.5rem;">🃏 Escolha <strong>Buraco Aberto</strong> se…</h3>
+      <p style="font-size: 0.95rem;">Você quer jogar a versão clássica, mais difundida no Brasil. Ideal para iniciantes e para partidas familiares.</p>
+    </div>
+    <div style="background: white; border-radius: 10px; padding: 1.25rem 1.5rem; border-top: 3px solid #8a6d3b;">
+      <h3 style="color: #7d5d34; margin-bottom: 0.5rem;">🔒 Escolha <strong>Buraco Fechado</strong> se…</h3>
+      <p style="font-size: 0.95rem;">Você gosta de mais imprevisibilidade (lixo escondido) e da possibilidade de fazer trincas. O Curingão adiciona um elemento extra de pontuação.</p>
+    </div>
+    <div style="background: white; border-radius: 10px; padding: 1.25rem 1.5rem; border-top: 3px solid #8a6d3b;">
+      <h3 style="color: #7d5d34; margin-bottom: 0.5rem;">🎯 Escolha <strong>STBL</strong> se…</h3>
+      <p style="font-size: 0.95rem;">Você busca o desafio máximo: sem trincas e com necessidade de bater limpo. É a modalidade preferida dos jogadores veteranos e estratégicos.</p>
+    </div>
+    <div style="background: white; border-radius: 10px; padding: 1.25rem 1.5rem; border-top: 3px solid #8a6d3b;">
+      <h3 style="color: #7d5d34; margin-bottom: 0.5rem;">♠️ Escolha <strong>Tranca</strong> se…</h3>
+      <p style="font-size: 0.95rem;">Você quer um jogo que mistura elementos do Buraco com regras próprias (3 preto tranca, 3 vermelho vale ±100). As trincas são permitidas.</p>
+    </div>
+    <div style="background: white; border-radius: 10px; padding: 1.25rem 1.5rem; border-top: 3px solid #8a6d3b;">
+      <h3 style="color: #7d5d34; margin-bottom: 0.5rem;">⚔️ Escolha <strong>Truco Paulista</strong> se…</h3>
+      <p style="font-size: 0.95rem;">Você prefere jogos de blefe, sinais secretos ao parceiro e partidas mais curtas e intensas. Diferente dos outros — é um jogo de truque, não de canastra.</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h2>Pronto para jogar?</h2>
+    <p>Mais de <strong>3 milhões de jogadores</strong> já escolheram o Jogos do Rei. Crie uma conta gratuita e experimente todas as modalidades — direto no navegador ou pelo app.</p>
+    <a href="https://www.jogosdorei.com.br" target="_blank" rel="noopener">Jogar Agora — É Grátis 🃏</a>
+  </div>
+
+  <p style="color: #666; font-size: 0.9rem; text-align: center; margin-top: 2rem;">
+    <strong>Fonte:</strong> Regras oficiais disponíveis em 
+    <a href="https://www.jogosdorei.com.br/regras-buraco.php" target="_blank" rel="noopener">regras-buraco.php</a>, 
+    <a href="https://www.jogosdorei.com.br/regras-buraco-fechado.php" target="_blank" rel="noopener">regras-buraco-fechado.php</a>, 
+    <a href="https://www.jogosdorei.com.br/regras-buraco-fechado-stbl.php" target="_blank" rel="noopener">regras-buraco-fechado-stbl.php</a>, 
+    <a href="https://www.jogosdorei.com.br/regras-tranca.php" target="_blank" rel="noopener">regras-tranca.php</a> e 
+    <a href="https://www.jogosdorei.com.br/regras-truco.php" target="_blank" rel="noopener">regras-truco.php</a>.
+  </p>
+
+</div>
+
+<footer>
+  <p>Glossário e comparativo criado por <a href="https://www.jogosdorei.com.br" target="_blank" rel="noopener">Jogos do Rei</a> — a maior plataforma de jogos de cartas do Brasil desde 2010.</p>
+  <p style="margin-top:0.5rem; font-size:0.8rem;">Buraco • Canastra • Tranca • Truco • STBL — Campeonatos diários com jogadores reais.</p>
+</footer>
+
+</body>
+</html>

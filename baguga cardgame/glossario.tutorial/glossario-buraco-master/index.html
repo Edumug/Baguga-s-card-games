@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossário de Buraco e Canastra — Termos do Jogo</title>
+  <meta name="description" content="Glossário completo com os termos e expressões do Buraco e Canastra. Aprenda o significado de morto, canastra, curinga, batida direta e muito mais.">
+  <meta name="keywords" content="glossário buraco, termos buraco, canastra significado, morto buraco, batida direta, curinga buraco">
+  <meta name="author" content="Jogos do Rei">
+  <meta property="og:title" content="Glossário de Buraco e Canastra">
+  <meta property="og:description" content="Termos, expressões e definições do Buraco/Canastra — o jogo de cartas mais popular do Brasil.">
+  <meta property="og:url" content="https://jogosdorei.github.io/glossario-buraco/">
+  <link rel="canonical" href="https://jogosdorei.github.io/glossario-buraco/">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f5f0;
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #7c1c2a 0%, #a52535 100%);
+      color: white;
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+    header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 20px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .intro {
+      background: white;
+      border-left: 4px solid #a52535;
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+    .intro a { color: #a52535; font-weight: 600; text-decoration: none; }
+    .intro a:hover { text-decoration: underline; }
+    h2 {
+      font-size: 1.5rem;
+      color: #7c1c2a;
+      border-bottom: 2px solid #e8d5d5;
+      padding-bottom: 0.5rem;
+      margin: 2.5rem 0 1.25rem;
+    }
+    h2 span { font-size: 1.1rem; margin-right: 0.5rem; }
+    .term-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 600px) {
+      .term-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .term-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-top: 3px solid #a52535;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .term-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .term-card h3 {
+      font-size: 1.1rem;
+      color: #7c1c2a;
+      margin-bottom: 0.5rem;
+    }
+    .term-card p { font-size: 0.95rem; color: #444; }
+    .term-card .tag {
+      display: inline-block;
+      background: #f5e6e8;
+      color: #a52535;
+      border-radius: 4px;
+      padding: 0.1rem 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .cta {
+      background: linear-gradient(135deg, #7c1c2a, #a52535);
+      color: white;
+      border-radius: 12px;
+      padding: 2rem 2rem;
+      text-align: center;
+      margin: 3rem 0 2rem;
+    }
+    .cta h2 { color: white; border: none; margin: 0 0 0.75rem; font-size: 1.4rem; }
+    .cta p { margin-bottom: 1.25rem; opacity: 0.9; font-size: 1rem; }
+    .cta a {
+      display: inline-block;
+      background: white;
+      color: #7c1c2a;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: opacity 0.15s;
+    }
+    .cta a:hover { opacity: 0.85; }
+    .pontos-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 1rem;
+    }
+    .pontos-table th {
+      background: #7c1c2a;
+      color: white;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    .pontos-table td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid #f0e8e8;
+      font-size: 0.95rem;
+    }
+    .pontos-table tr:last-child td { border-bottom: none; }
+    .pontos-table tr:nth-child(even) td { background: #fdf8f8; }
+    .pts { font-weight: 700; color: #a52535; }
+    footer {
+      background: #2c2c2c;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+    footer a { color: #e8a0a8; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .search-box {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: 2px solid #e0d0d0;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-box input:focus { border-color: #a52535; }
+    #no-results { display: none; color: #888; text-align: center; padding: 2rem; }
+    nav {
+      background: #5e1520;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      padding: 0.65rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: background 0.15s, color 0.15s;
+    }
+    nav a:hover, nav a.active {
+      background: rgba(255,255,255,0.12);
+      color: white;
+    }
+    nav a.active {
+      border-bottom: 3px solid #e8a0a8;
+    }
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    @media (min-width: 700px) {
+      .modal-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .modal-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-top: 3px solid #7c1c2a;
+    }
+    .modal-card h3 { font-size: 1.05rem; color: #7c1c2a; margin-bottom: 0.4rem; }
+    .modal-card p { font-size: 0.93rem; color: #444; margin-bottom: 0.5rem; }
+    .modal-card a { color: #a52535; font-weight: 600; text-decoration: none; font-size: 0.88rem; }
+    .modal-card a:hover { text-decoration: underline; }
+    .modal-card .tag { display: inline-block; background: #f5e6e8; color: #a52535; border-radius: 4px; padding: 0.1rem 0.5rem; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🃏 Glossário de Buraco e Canastra</h1>
+  <p>Todos os termos e expressões do jogo de cartas mais popular do Brasil</p>
+  <span class="badge">Referência completa • Atualizado em 2026</span>
+</header>
+
+<nav>
+  <a href="./index.html" class="active">🃏 Buraco</a>
+  <a href="./stbl.html">♠️ STBL</a>
+  <a href="./tranca.html">🔒 Tranca</a>
+  <a href="./truco.html">⚔️ Truco</a>
+  <a href="./sueca.html">🎴 Sueca</a>
+  <a href="./domino.html">🁢 Dominó</a>
+  <a href="./comparativo.html">📋 Comparativo</a>
+</nav>
+
+<div class="container">
+
+  <div class="intro">
+    <strong>Buraco</strong> (também chamado de <strong>Canastra</strong> em vários estados) é um jogo de cartas para 2 ou 4 jogadores com terminologia própria que pode confundir iniciantes. Este glossário reúne todos os termos essenciais para você jogar com confiança — seja com a família, no clube, ou online no <a href="https://www.jogosdorei.com.br" target="_blank" rel="noopener">Jogos do Rei</a>.
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="🔍 Buscar termo... (ex: morto, canastra, curinga)" oninput="filtrarTermos()">
+  </div>
+  <p id="no-results">Nenhum termo encontrado. Tente outra busca.</p>
+
+  <!-- SEÇÃO: Estrutura do jogo -->
+  <h2><span>🎴</span> Estrutura do Jogo</h2>
+  <div class="term-grid" id="section-estrutura">
+
+    <div class="term-card" data-termo="baralho cartas deck">
+      <span class="tag">Estrutura</span>
+      <h3>Baralho</h3>
+      <p>O Buraco usa <strong>2 baralhos completos</strong> (104 cartas no total), sem o Curingão (Joker). Os dois baralhos são embaralhados juntos antes de cada partida.</p>
+    </div>
+
+    <div class="term-card" data-termo="monte deck pilha compra">
+      <span class="tag">Estrutura</span>
+      <h3>Monte</h3>
+      <p>A pilha de cartas viradas para baixo no centro da mesa. Os jogadores compram do Monte uma carta por vez. Quando o Monte acaba, o jogo pode ter um desfecho especial.</p>
+    </div>
+
+    <div class="term-card" data-termo="lixo descarte pilha">
+      <span class="tag">Estrutura</span>
+      <h3>Lixo (Descarte)</h3>
+      <p>A pilha de cartas descartadas, viradas para cima. Você pode pegar <strong>todas</strong> as cartas do lixo (nunca apenas algumas), desde que use a carta do topo imediatamente em um jogo válido.</p>
+    </div>
+
+    <div class="term-card" data-termo="morto pilha escondida pegar">
+      <span class="tag">Estrutura</span>
+      <h3>Morto</h3>
+      <p>Um monte fechado de <strong>11 cartas</strong> separado antes do início da partida. Há dois mortos por mesa. O jogador que fizer a <em>batida direta</em> pega um morto e incorpora as cartas à sua mão.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Ações -->
+  <h2><span>🤲</span> Ações do Jogo</h2>
+  <div class="term-grid" id="section-acoes">
+
+    <div class="term-card" data-termo="comprar carta monte lixo">
+      <span class="tag">Ação</span>
+      <h3>Comprar</h3>
+      <p>Primeira ação da sua vez. Você pode comprar <strong>1 carta do Monte</strong> ou <strong>todas as cartas do Lixo</strong>. Se pegar o lixo, precisa baixar imediatamente um jogo com a carta do topo.</p>
+    </div>
+
+    <div class="term-card" data-termo="baixar jogo mesa meld">
+      <span class="tag">Ação</span>
+      <h3>Baixar Jogo</h3>
+      <p>Colocar um jogo válido (3+ cartas em sequência do mesmo naipe ou 3+ cartas do mesmo valor) na mesa. Uma vez baixado, seu parceiro também pode adicionar cartas ao jogo.</p>
+    </div>
+
+    <div class="term-card" data-termo="descartar lixo final turno">
+      <span class="tag">Ação</span>
+      <h3>Descartar</h3>
+      <p>A última ação de cada turno: colocar uma carta na pilha do Lixo, encerrando sua vez. A carta descartada fica disponível para o próximo jogador pegar (se quiser o lixo inteiro).</p>
+    </div>
+
+    <div class="term-card" data-termo="encaixar adicionar jogo existente">
+      <span class="tag">Ação</span>
+      <h3>Encaixar</h3>
+      <p>Adicionar uma carta a um jogo já baixado na mesa. Você ou seu parceiro podem encaixar cartas em qualquer jogo do time, estendendo sequências ou trincas já existentes.</p>
+    </div>
+
+    <div class="term-card" data-termo="limpar canastra suja curinga remover">
+      <span class="tag">Ação</span>
+      <h3>Limpar Canastra</h3>
+      <p>Remover um curinga (2) de uma canastra suja, substituindo-o pela carta natural correspondente. Só é possível se o curinga não estiver na ponta e a carta substituta for do mesmo naipe.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Batidas -->
+  <h2><span>🏆</span> Tipos de Batida</h2>
+  <div class="term-grid" id="section-batidas">
+
+    <div class="term-card" data-termo="bater ganhar rodada sem cartas">
+      <span class="tag">Batida</span>
+      <h3>Bater</h3>
+      <p>Ficar sem cartas na mão, encerrando a rodada. Para bater, seu time precisa ter <strong>pelo menos uma canastra limpa</strong> na mesa. Há três tipos de batida.</p>
+    </div>
+
+    <div class="term-card" data-termo="batida direta última carta mesa jogo">
+      <span class="tag">Batida</span>
+      <h3>Batida Direta</h3>
+      <p>A última carta da mão é <strong>baixada na mesa ou encaixada em um jogo</strong> (não descartada). O jogador pega o morto imediatamente e pode continuar baixando jogos antes de descartar.</p>
+    </div>
+
+    <div class="term-card" data-termo="batida indireta última carta lixo descarte">
+      <span class="tag">Batida</span>
+      <h3>Batida Indireta</h3>
+      <p>A última carta da mão é <strong>descartada no lixo</strong>. O jogador só poderá usar as cartas do morto na <em>próxima rodada</em> — não imediatamente.</p>
+    </div>
+
+    <div class="term-card" data-termo="batida final encerrar partida">
+      <span class="tag">Batida</span>
+      <h3>Batida Final</h3>
+      <p>Quando o time já pegou o morto e um jogador fica sem cartas. <strong>Encerra a partida</strong>. Exige ao menos uma canastra limpa. Vale <strong>+100 pontos</strong> para o time que bateu.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Canastras -->
+  <h2><span>✨</span> Tipos de Canastra</h2>
+  <div class="term-grid" id="section-canastras">
+
+    <div class="term-card" data-termo="canastra sete cartas sequência">
+      <span class="tag">Canastra</span>
+      <h3>Canastra</h3>
+      <p>Um jogo com <strong>7 ou mais cartas</strong> na mesa. Há quatro tipos, de acordo com a composição. Pelo menos uma canastra limpa é obrigatória para fazer a batida final.</p>
+    </div>
+
+    <div class="term-card" data-termo="canastra limpa sem curinga 200 pontos">
+      <span class="tag">Canastra</span>
+      <h3>Canastra Limpa</h3>
+      <p>7+ cartas em sequência <strong>sem nenhum curinga</strong>. Vale <strong>200 pontos</strong> e é obrigatória para bater. É o objetivo central de uma boa estratégia de Buraco.</p>
+    </div>
+
+    <div class="term-card" data-termo="canastra suja com curinga 100 pontos">
+      <span class="tag">Canastra</span>
+      <h3>Canastra Suja</h3>
+      <p>7+ cartas em sequência <strong>com pelo menos um curinga</strong> (número 2). Vale <strong>100 pontos</strong>. Pode ser "limpa" depois se o curinga for substituído pela carta natural correta.</p>
+    </div>
+
+    <div class="term-card" data-termo="canastra 500 escala mesmo valor">
+      <span class="tag">Canastra</span>
+      <h3>Canastra de 500</h3>
+      <p>7 cartas do <strong>mesmo valor</strong> (ex: sete 4s). Vale <strong>500 pontos</strong>. Difícil de montar, mas devastadora na pontuação final. Também chamada de "escala".</p>
+    </div>
+
+    <div class="term-card" data-termo="canastra 1000 natural mesmo naipe sequência">
+      <span class="tag">Canastra</span>
+      <h3>Canastra de 1000</h3>
+      <p>7 cartas do <strong>mesmo naipe em sequência natural</strong>, sem curingas. Vale <strong>1000 pontos</strong>. É a canastra mais valiosa e mais rara do jogo.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Cartas Especiais -->
+  <h2><span>🃏</span> Cartas Especiais</h2>
+  <div class="term-grid" id="section-cartas">
+
+    <div class="term-card" data-termo="curinga dois coringa substituto">
+      <span class="tag">Carta</span>
+      <h3>Curinga (o "Dois")</h3>
+      <p>O número <strong>2</strong> de qualquer naipe funciona como curinga no Buraco — substitui qualquer carta em um jogo. Cada baralho tem 4 curingas. Vale <strong>10 pontos</strong> se ficar na mão ao final.</p>
+    </div>
+
+    <div class="term-card" data-termo="curingão joker buraco fechado">
+      <span class="tag">Carta</span>
+      <h3>Curingão (Joker)</h3>
+      <p>No <strong>Buraco Aberto</strong> (o mais comum), o Curingão não existe — joga-se com 104 cartas sem ele. No <strong>Buraco Fechado</strong>, o Curingão entra com valor especial de <strong>50 pontos</strong>.</p>
+    </div>
+
+    <div class="term-card" data-termo="ás ace carta alta">
+      <span class="tag">Carta</span>
+      <h3>Ás</h3>
+      <p>A carta mais valiosa numericamente: vale <strong>15 pontos</strong> se ficar na mão. Também é estratégico nas sequências — pode ser usado como carta alta ou em sequências específicas conforme a variante.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Termos de Pontuação -->
+  <h2><span>📊</span> Pontuação — Referência Rápida</h2>
+
+  <table class="pontos-table">
+    <thead>
+      <tr>
+        <th>Evento / Carta</th>
+        <th>Pontos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Batida Final</td><td class="pts">+100</td></tr>
+      <tr><td>Canastra de 1000</td><td class="pts">+1000</td></tr>
+      <tr><td>Canastra de 500</td><td class="pts">+500</td></tr>
+      <tr><td>Canastra Limpa</td><td class="pts">+200</td></tr>
+      <tr><td>Canastra Suja</td><td class="pts">+100</td></tr>
+      <tr><td>Ás</td><td class="pts">+15</td></tr>
+      <tr><td>Do 8 ao Rei (K)</td><td class="pts">+10</td></tr>
+      <tr><td>Curinga (Dois)</td><td class="pts">+10</td></tr>
+      <tr><td>Do 3 ao 7</td><td class="pts">+5</td></tr>
+      <tr><td>Não pegar o morto</td><td class="pts">−100</td></tr>
+      <tr><td>Cartas na mão (penalidade)</td><td class="pts">−valor</td></tr>
+    </tbody>
+  </table>
+
+  <!-- SEÇÃO: Expressões populares -->
+  <h2><span>💬</span> Expressões Populares</h2>
+  <div class="term-grid" id="section-expressoes">
+
+    <div class="term-card" data-termo="estourar monte acabar cartas">
+      <span class="tag">Expressão</span>
+      <h3>Estourar o Monte</h3>
+      <p>Quando o Monte fica sem cartas antes de qualquer time completar a batida final. Nesse caso, o jogo termina sem batida final — nenhum time recebe os +100 pontos extras.</p>
+    </div>
+
+    <div class="term-card" data-termo="mão cheia muitas cartas penalidade">
+      <span class="tag">Expressão</span>
+      <h3>Mão Cheia</h3>
+      <p>Ter muitas cartas na mão ao fim da partida. Cartas não baixadas contam como <strong>pontos negativos</strong>, então "mão cheia" é situação ruim — cada carta vale seu ponto negativo correspondente.</p>
+    </div>
+
+    <div class="term-card" data-termo="jogar lixo pegar descarte">
+      <span class="tag">Expressão</span>
+      <h3>"Jogar no Lixo"</h3>
+      <p>Descartar uma carta estrategicamente para o lixo — às vezes para não dar ao adversário, outras vezes para "carregar" o lixo com cartas que você depois vai querer pegar junto com a pilha.</p>
+    </div>
+
+    <div class="term-card" data-termo="limpar mesa baixar tudo cartas">
+      <span class="tag">Expressão</span>
+      <h3>Limpar a Mão</h3>
+      <p>Baixar todas as cartas possíveis da mão antes de descartar, minimizando a exposição a pontos negativos caso o adversário bata inesperadamente.</p>
+    </div>
+
+    <div class="term-card" data-termo="segurar canastra guardar cartas">
+      <span class="tag">Expressão</span>
+      <h3>Segurar Canastra</h3>
+      <p>Guardar cartas para completar uma canastra de maior valor (limpa, 500 ou 1000) em vez de baixar logo uma canastra suja. Estratégia arriscada, mas muito recompensadora.</p>
+    </div>
+
+    <div class="term-card" data-termo="buraco canastra mesmo jogo sinônimo">
+      <span class="tag">Expressão</span>
+      <h3>Buraco = Canastra?</h3>
+      <p>Sim! "Buraco" e "Canastra" são o <strong>mesmo jogo</strong> com nomes regionais diferentes. São Paulo e Sul preferem "Buraco". Minas Gerais e Nordeste chamam de "Canastra". As regras são idênticas.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Modalidades do Buraco -->
+  <h2><span>🎮</span> Modalidades do Buraco</h2>
+  <p style="color:#666;font-size:0.95rem;margin-bottom:1.25rem;">O Buraco tem diferentes variantes com regras próprias. Confira as principais modalidades disponíveis no Jogos do Rei:</p>
+  <div class="modal-grid">
+
+    <div class="modal-card">
+      <span class="tag">Modalidade</span>
+      <h3>Buraco Aberto</h3>
+      <p>A modalidade mais jogada no Brasil. Usa <strong>104 cartas</strong> (2 baralhos sem Curingão/Joker). <strong>Não aceita trinca</strong> — os jogos são formados apenas por sequências do mesmo naipe. É o modo padrão do Jogos do Rei.</p>
+      <a href="https://www.jogosdorei.com.br" target="_blank" rel="noopener">Jogar Buraco Aberto →</a>
+    </div>
+
+    <div class="modal-card">
+      <span class="tag">Modalidade</span>
+      <h3>Buraco Fechado</h3>
+      <p>Usa <strong>108 cartas</strong> (2 baralhos com os 4 Curingões/Jokers incluídos). <strong>Aceita trinca</strong> (3+ cartas do mesmo valor). No lixo, só a última carta descartada fica visível — as demais ficam escondidas. O Curingão vale <strong>50 pontos</strong>.</p>
+      <a href="https://www.jogosdorei.com.br" target="_blank" rel="noopener">Jogar Buraco Fechado →</a>
+    </div>
+
+    <div class="modal-card">
+      <span class="tag">Modalidade</span>
+      <h3>STBL — Sem Trinca e Bate com Limpa</h3>
+      <p>Variante do Buraco Fechado (108 cartas, com Curingão) com duas restrições extras: <strong>sem trinca</strong> e o jogador só pode fazer a batida final se tiver pelo menos uma <strong>canastra limpa</strong> na mesa. Exige estratégia mais cuidadosa.</p>
+      <a href="https://www.jogosdorei.com.br" target="_blank" rel="noopener">Jogar STBL →</a>
+    </div>
+
+    <div class="modal-card">
+      <span class="tag">Modalidade</span>
+      <h3>Canastra Italiano / Buraco Italy</h3>
+      <p>Versão italiana do Buraco com <strong>108 cartas</strong> (inclui Curingões). <strong>Aceita trinca e lavadeira</strong> — uma modalidade com mais liberdade para montar combinações criativas. Popular entre jogadores experientes.</p>
+      <a href="https://www.jogosdorei.com.br/inicio/?jogo=BURACO_ITALY_4" target="_blank" rel="noopener">Jogar Buraco Italy →</a>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Outros glossários do Reino -->
+  <h2><span>📚</span> Outros Glossários do Reino</h2>
+  <p style="color:#666;font-size:0.95rem;margin-bottom:1.25rem;">Além do Buraco, o Jogos do Rei tem outras modalidades com termos próprios. Confira os glossários completos:</p>
+  <div class="modal-grid">
+
+    <div class="modal-card">
+      <span class="tag">Glossário</span>
+      <h3>♠️ STBL</h3>
+      <p>Termos do Buraco Fechado Sem Trinca e Bate com Limpa: por que não vale trinca, por que a batida final exige canastra limpa, Curingão e compra justificada.</p>
+      <a href="./stbl.html">Ver glossário do STBL →</a>
+    </div>
+
+    <div class="modal-card">
+      <span class="tag">Glossário</span>
+      <h3>🔒 Tranca</h3>
+      <p>Termos da Tranca: 3 preto, 3 vermelho, canastra suja, trincas e as regras que a diferenciam do Buraco.</p>
+      <a href="./tranca.html">Ver glossário de Tranca →</a>
+    </div>
+
+    <div class="modal-card">
+      <span class="tag">Glossário</span>
+      <h3>⚔️ Truco</h3>
+      <p>Termos do Truco Paulista: manilha, vira, truco, seis, nove, doze, mão de onze e a força das cartas.</p>
+      <a href="./truco.html">Ver glossário de Truco →</a>
+    </div>
+
+    <div class="modal-card">
+      <span class="tag">Glossário</span>
+      <h3>🎴 Sueca</h3>
+      <p>Termos da Sueca: trunfo (briscola), vaza, bisca, assistência ao naipe, bandeira/capote e pontos de carta.</p>
+      <a href="./sueca.html">Ver glossário de Sueca →</a>
+    </div>
+
+    <div class="modal-card">
+      <span class="tag">Glossário</span>
+      <h3>🁢 Dominó</h3>
+      <p>Termos do Dominó: peça, sena dupla, pontas abertas, passe, batida, tranca (jogo fechado) e pintas.</p>
+      <a href="./domino.html">Ver glossário de Dominó →</a>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Pronto para jogar?</h2>
+    <p>O Jogos do Rei tem mais de <strong>3 milhões de jogadores</strong> e campeonatos diários. Jogue Buraco, Canastra, Tranca e Truco contra adversários reais — direto no navegador ou pelo app.</p>
+    <a href="https://www.jogosdorei.com.br" target="_blank" rel="noopener">Jogar Agora — É Grátis 🃏</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>Glossário criado por <a href="https://www.jogosdorei.com.br" target="_blank" rel="noopener">Jogos do Rei</a> — a maior plataforma de jogos de cartas do Brasil desde 2010.</p>
+  <p style="margin-top:0.5rem; font-size:0.8rem;">Buraco • Canastra • Tranca • Truco • STBL — Campeonatos diários com jogadores reais.</p>
+</footer>
+
+<script>
+  function filtrarTermos() {
+    const q = document.getElementById('search').value.toLowerCase();
+    const cards = document.querySelectorAll('.term-card');
+    let found = 0;
+    cards.forEach(card => {
+      const text = (card.getAttribute('data-termo') + ' ' + card.innerText).toLowerCase();
+      const match = !q || text.includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) found++;
+    });
+    document.getElementById('no-results').style.display = (found === 0 && q) ? 'block' : 'none';
+  }
+</script>
+
+</body>
+</html>

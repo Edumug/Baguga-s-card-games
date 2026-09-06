@@ -1,0 +1,202 @@
+.sala {
+    width: min(1100px, 94%);
+    margin: auto;
+    padding: 40px 0;
+}
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.subtitulo {
+    display: block;
+    color: var(--text-muted);
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+h1 {
+    font-size: 32px;
+}
+.codigo-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 18px;
+    background: rgba(18,23,32,.9);
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+}
+.codigo-box span {
+    color: var(--text-muted);
+    font-size: 10px;
+}
+.codigo-box strong {
+    font-size: 21px;
+    letter-spacing: 3px;
+}
+.codigo-box button {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    background: #303a4c;
+    color: white;
+}
+.codigo-box button:hover {
+    background: #404e66;
+}
+.conteudo {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+}
+.painel {
+    padding: 24px;
+    border-radius: var(--radius);
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow);
+}
+.painel-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+h2 {
+    font-size: 21px;
+}
+.status {
+    padding: 7px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+    background: #26372d;
+    color: #9fd3ae;
+}
+.lista-jogadores {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.jogador {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: #1a202b;
+    transition: background 0.2s;
+}
+.jogador:hover {
+    background: #222b3a;
+}
+.jogador-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #2a3241;
+    font-size: 20px;
+}
+.jogador-nome {
+    font-weight: bold;
+}
+.jogador-tipo {
+    color: #7f899c;
+    font-size: 11px;
+    margin-top: 3px;
+}
+.btn-remover {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 7px;
+    background: #45272b;
+    color: white;
+    cursor: pointer;
+}
+.btn-remover:hover {
+    background: #693a3f;
+}
+.contador {
+    color: #7f899c;
+    font-size: 12px;
+    padding-top: 10px;
+    text-align: center;
+}
+.btn-bot {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #263245;
+    color: white;
+    cursor: pointer;
+}
+.btn-bot:hover:not(:disabled) {
+    background: #334158;
+}
+.configuracao p {
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #8c96a9;
+}
+.mensagem {
+    min-height: 24px;
+    margin: 20px 0;
+    color: #b7c1d2;
+    font-size: 13px;
+}
+.btn-principal {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #465f83, #334762);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-principal:disabled, .btn-bot:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+.btn-sair {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: #8791a4;
+    cursor: pointer;
+}
+.btn-sair:hover {
+    background: rgba(255,0,0,0.1);
+    color: #ff8a8a;
+}
+
+@media(max-width: 750px) {
+    .cabecalho {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+    .codigo-box {
+        justify-content: space-between;
+    }
+    .conteudo {
+        grid-template-columns: 1fr;
+    }
+}

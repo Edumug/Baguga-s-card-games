@@ -1,0 +1,525 @@
+/* ===== MESA ===== */
+.mesa {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle at top right, #174f42, #082b25 65%);
+}
+
+/* ===== TOPO ===== */
+.topo {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 20px;
+    border-radius: 16px;
+    background: rgba(12,17,22,.88);
+    border: 1px solid rgba(255,255,255,.08);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+}
+.topo div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.topo > div:nth-child(2) {
+    display: block;
+}
+.label {
+    color: #7e899b;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.topo button {
+    background: #293342;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+.topo button:hover {
+    background: #3a4658;
+}
+
+/* ===== JOGADORES ===== */
+.jogador {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 14px;
+    min-width: 145px;
+    border-radius: 14px;
+    background: rgba(15,20,27,.92);
+    border: 1px solid rgba(255,255,255,.08);
+    transition: box-shadow 0.3s, border-color 0.3s, transform 0.2s;
+    backdrop-filter: blur(2px);
+    z-index: 5;
+}
+.jogador.vez {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(233,187,84,0.4), 0 0 30px rgba(233,187,84,0.3);
+    animation: pulse-glow 1.5s infinite;
+}
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 3px rgba(233,187,84,0.3), 0 0 20px rgba(233,187,84,0.2); }
+    50% { box-shadow: 0 0 0 6px rgba(233,187,84,0.5), 0 0 40px rgba(233,187,84,0.4); }
+    100% { box-shadow: 0 0 0 3px rgba(233,187,84,0.3), 0 0 20px rgba(233,187,84,0.2); }
+}
+.jogador .avatar {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #293343;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+.jogador .dados-jogador {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+.jogador .nome {
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.jogador .tipo {
+    color: #7e899a;
+    font-size: 10px;
+    white-space: nowrap;
+}
+.jogador-principal {
+    bottom: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row-reverse;
+    padding: 12px 20px;
+    background: rgba(10,20,30,0.95);
+    border: 2px solid rgba(233,187,84,0.3);
+}
+.jogador-principal .avatar {
+    background: #4a5a6a;
+}
+
+/* Posicionamento dos outros jogadores */
+.jogador-superior {
+    top: 95px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.jogador-esquerda {
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+}
+.jogador-direita {
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+}
+
+/* ===== CENTRO / MESA ===== */
+.centro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+.mesa-jogo {
+    width: min(560px, 52vw);
+    height: min(340px, 38vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, #2a6a44, #1a3a2a);
+    border: 8px solid #101912;
+    box-shadow: 0 0 0 3px #35443a, 0 20px 60px rgba(0,0,0,0.6);
+    transition: all 0.3s;
+}
+.mesa-jogo .info-partida {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.6);
+    padding: 4px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    color: #ccd;
+    display: flex;
+    gap: 20px;
+    letter-spacing: 1px;
+}
+.mesa-jogo .info-partida span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.cartas-mesa {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+    min-width: 180px;
+    min-height: 96px;
+    padding: 12px;
+    cursor: pointer;
+}
+.sequencias-area {
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    width: 44%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    padding: 8px;
+    background: rgba(8, 35, 22, 0.45);
+    border-radius: 12px;
+    z-index: 4;
+}
+.sequencias-adversario {
+    left: -300px;
+    border-right: 2px solid rgba(42, 107, 204, 0.4);
+}
+.sequencias-propria {
+    right: -300px;
+    border-left: 2px solid rgba(204, 42, 42, 0.4);  
+}
+.sequencia-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 6px;
+    border-radius: 8px;
+}
+.sequencia-propria {
+    background: rgba(204, 42, 42, 0.08);
+}
+.sequencia-adversaria {
+    background: rgba(42, 107, 204, 0.08);
+}
+.sequencia-titulo {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #e0e0e0;
+}
+.jogo-baixado {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2px;
+    padding: 4px;
+    border: 1px dashed rgba(255,255,255,0.2);
+    border-radius: 6px;
+    max-width: 100%;
+}
+.jogo-proprio {
+    border-color: rgba(204, 42, 42, 0.6);
+    cursor: pointer;
+}
+.jogo-proprio:hover {
+    background: rgba(204, 42, 42, 0.15);
+}
+.sequencias-area .carta {
+    width: 36px !important;
+    height: 52px !important;
+    font-size: 12px !important;
+    margin: 0 !important;
+}
+
+.carta {
+    width: 60px;
+    height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #f5f5f5;
+    color: #161616;
+    font-size: 22px;
+    font-weight: bold;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+    user-select: none;
+    flex-shrink: 0;
+}
+.carta.vermelha {
+    color: #c92b35;
+}
+.carta.oculta {
+    background: #1a2a3a;
+    color: transparent;
+    background-image: repeating-linear-gradient(45deg, #2a4a5a 0px, #2a4a5a 8px, #1a3a4a 8px, #1a3a4a 16px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+}
+.carta.oculta::after {
+    content: "🂠";
+    font-size: 30px;
+    color: rgba(255,255,255,0.2);
+}
+.mensagem-jogo {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+    font-size: 13px;
+    color: #dde8e0;
+    background: rgba(0,0,0,0.5);
+    padding: 6px 16px;
+    border-radius: 30px;
+    backdrop-filter: blur(2px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===== MINHAS CARTAS ===== */
+.minhas-cartas {
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    transform: translateX(-50%);
+    z-index: 8;
+}
+.cartas {
+    display: flex;
+    justify-content: center;
+    min-height: 96px;
+    padding: 0 10px;
+}
+.minhas-cartas .carta {
+    margin-left: -14px;
+    transition: transform 0.2s, margin-top 0.2s;
+    cursor: pointer;
+}
+.minhas-cartas .carta:first-child {
+    margin-left: 0;
+}
+.minhas-cartas .carta:hover {
+    transform: translateY(-20px) scale(1.05);
+    z-index: 20;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+.minhas-cartas .carta.selecionada {
+    transform: translateY(-18px);
+    box-shadow: 0 0 0 3px var(--accent);
+}
+
+/* ===== CONTROLES ===== */
+.controles {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: 70%;
+    z-index: 15;
+}
+.controles button {
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    background: #293342;
+    color: white;
+    transition: all 0.15s;
+    font-size: 13px;
+}
+.controles button:hover:not(:disabled) {
+    background: #3e4d62;
+}
+.controles .acao-fim {
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    color: #13251f;
+}
+.controles .acao-fim:hover:not(:disabled) {
+    filter: brightness(1.1);
+}
+.controles .acao-perigo {
+    background: #6b3035;
+}
+.controles .acao-perigo:hover:not(:disabled) {
+    background: #8a4047;
+}
+.controles-truco, .respostas-truco {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+.controles-truco button {
+    background: #4a5a3a;
+}
+.controles-truco button:hover:not(:disabled) {
+    background: #5a7a4a;
+}
+.respostas-truco button:first-child {
+    background: #2f7658;
+}
+.respostas-truco button:nth-child(2) {
+    background: #6b3035;
+}
+.respostas-truco button:last-child {
+    background: #8a6a3a;
+}
+
+/* ===== PLACAR ===== */
+.placar {
+    position: absolute;
+    top: 85px;
+    right: 20px;
+    width: 160px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: rgba(10,14,19,.88);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,.06);
+    z-index: 6;
+}
+.placar h2 {
+    font-size: 13px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    color: var(--accent);
+}
+.placar-jogador {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 12px;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+}
+.placar-jogador:last-child {
+    border-bottom: none;
+}
+.placar-jogador span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.placar-jogador strong {
+    color: var(--accent);
+}
+
+/* ===== TOAST (notificações) ===== */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+    max-width: 90%;
+}
+.toast {
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    border-left: 4px solid var(--accent);
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    animation: slideDown 0.4s ease-out;
+    pointer-events: auto;
+    text-align: center;
+}
+.toast-success { border-left-color: var(--success); }
+.toast-danger { border-left-color: var(--danger); }
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 750px) {
+    .placar { display: none; }
+    .jogador-esquerda { left: 5px; }
+    .jogador-direita { right: 5px; }
+    .mesa-jogo {
+        width: 380px;
+        height: 240px;
+    }
+    .carta {
+        width: 48px;
+        height: 70px;
+        font-size: 16px;
+    }
+    .topo { padding: 10px 14px; }
+    .topo strong { font-size: 14px; }
+    .controles {
+        right: 10px;
+        bottom: 10px;
+        max-width: 90%;
+        gap: 5px;
+    }
+    .controles button { padding: 8px 12px; font-size: 11px; }
+}
+
+@media (max-width: 500px) {
+    .jogador {
+        min-width: auto;
+        padding: 6px 10px;
+    }
+    .dados-jogador { display: none; }
+    .jogador .avatar { width: 34px; height: 34px; font-size: 18px; }
+    .mesa-jogo {
+        width: 300px;
+        height: 200px;
+    }
+    .carta {
+        width: 40px;
+        height: 58px;
+        font-size: 13px;
+    }
+    .controles {
+        right: 50%;
+        transform: translateX(50%);
+        justify-content: center;
+        bottom: 5px;
+        gap: 4px;
+    }
+    .controles button { padding: 6px 10px; font-size: 10px; }
+    .jogador-principal { bottom: 65px; padding: 6px 12px; }
+    .minhas-cartas .carta { margin-left: -10px; width: 38px; height: 56px; font-size: 12px; }
+    .minhas-cartas .carta:first-child { margin-left: 0; }
+    .sequencias-area {
+        right: 8px;
+        width: 48%;
+        padding: 5px;
+        
+    }
+    .sequencias-area .carta {
+        width: 34px !important;
+        height: 50px !important;
+        font-size: 12px !important;
+    }
+}

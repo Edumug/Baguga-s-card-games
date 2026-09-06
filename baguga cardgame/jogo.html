@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partida</title>
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/jogo.css">
+</head>
+<body>
+
+<main class="mesa">
+    <header class="topo">
+        <div><span class="label">PARTIDA</span><strong id="nomeJogo">Carregando...</strong></div>
+        <div>Sala: <strong id="codigoSala">-----</strong></div>
+        <button id="btnSair">Sair</button>
+    </header>
+
+    <section id="jogadorSuperior" class="jogador jogador-superior">
+        <div class="avatar">👤</div>
+        <div class="dados-jogador"><strong class="nome">—</strong><span class="tipo">—</span></div>
+    </section>
+
+    <section id="jogadorEsquerda" class="jogador jogador-esquerda">
+        <div class="avatar">👤</div>
+        <div class="dados-jogador"><strong class="nome">—</strong><span class="tipo">—</span></div>
+    </section>
+
+    <section id="jogadorDireita" class="jogador jogador-direita">
+        <div class="avatar">👤</div>
+        <div class="dados-jogador"><strong class="nome">—</strong><span class="tipo">—</span></div>
+    </section>
+
+    <section class="centro">
+        <div class="mesa-jogo">
+            <div class="info-partida">
+                <span id="infoRodada">Rodada 1</span>
+                <span id="infoAposta">Aposta: 1</span>
+            </div>
+            <div id="sequenciasAdversario" class="sequencias-area sequencias-adversario escondido"></div>
+            <div id="sequenciasPropria" class="sequencias-area sequencias-propria escondido"></div>
+            <div id="cartasMesa" class="cartas-mesa"></div>
+            <div id="mensagemJogo" class="mensagem-jogo">Carregando partida...</div>
+        </div>
+    </section>
+
+    <section id="jogadorPrincipal" class="jogador jogador-principal">
+        <div class="dados-jogador"><strong class="nome">Você</strong><span class="tipo">Jogador</span></div>
+        <div class="avatar">👤</div>
+    </section>
+
+    <section class="minhas-cartas">
+        <div id="minhasCartas" class="cartas"></div>
+    </section>
+
+    <section class="controles">
+        <button id="btnComprar">Comprar</button>
+        <button id="btnPassar">Passar</button>
+        <button id="btnComprarDescarte" class="escondido">Comprar descarte</button>
+        <div id="controlesTruco" class="controles-truco escondido">
+            <button data-pedido="3">Pedir Truco</button>
+            <button data-pedido="6">Pedir 6</button>
+            <button data-pedido="9">Pedir 9</button>
+            <button data-pedido="12">Pedir 12</button>
+        </div>
+        <div id="respostasTruco" class="respostas-truco escondido">
+            <button id="btnAceitarTruco">Aceitar</button>
+            <button id="btnRecusarTruco">Correr</button>
+            <button id="btnAumentarTruco">Aumentar</button>
+        </div>
+        <button id="btnNovaRodada" class="acao-fim escondido">Nova rodada</button>
+        <button id="btnTrocarJogo" class="escondido">Trocar jogo</button>
+        <div id="controlesPoker" class="controles-poker escondido">
+            <button id="btnFold">Desistir</button>
+            <button id="btnCall">Pagar</button>
+            <button id="btnRaise">Aumentar</button>
+            <input type="number" id="raiseValor" placeholder="Valor" min="1" style="width:60px; padding:4px;">
+        </div>
+    </section>
+
+    <aside class="placar">
+        <h2>Placar</h2>
+        <div id="listaPlacar"></div>
+    </aside>
+</main>
+
+<script type="module" src="js/jogo.js?v=6"></script>
+</body>
+</html>

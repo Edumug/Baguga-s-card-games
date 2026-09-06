@@ -1,0 +1,188 @@
+.topo {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    background: rgba(0,0,0,0.7);
+    border-bottom: 1px solid var(--border-soft);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.logo h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+.cartas-logo {
+    display: flex;
+    gap: 3px;
+}
+.cartas-logo span {
+    width: 32px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    color: #111;
+    border-radius: 5px;
+    font-size: 22px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.35);
+}
+
+.inicio {
+    min-height: calc(100vh - 150px);
+    display: grid;
+    grid-template-columns: minmax(360px, 48%) 1fr;
+    gap: 0;
+}
+
+.painel-criar {
+    padding: 90px 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-right: 1px solid var(--border-soft);
+}
+
+.btn-principal {
+    width: 100%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    color: #13251f;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+.btn-secundario {
+    background: #276957;
+    color: white;
+    min-width: 110px;
+}
+
+.separador {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 32px 0;
+}
+.separador span {
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,.18);
+}
+.separador label {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.entrada {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.entrada label {
+    font-size: 16px;
+    color: #dce7e4;
+}
+.entrada-linha {
+    display: flex;
+    gap: 10px;
+}
+.entrada input {
+    flex: 1;
+    height: 55px;
+    border: 1px solid #315c51;
+    border-radius: 10px;
+    background: #0d342b;
+    color: white;
+    text-align: center;
+    font-size: 19px;
+    letter-spacing: 4px;
+    outline: none;
+    text-transform: uppercase;
+}
+.entrada input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(230,180,80,.12);
+}
+.mensagem {
+    margin-top: 18px;
+    text-align: center;
+    min-height: 20px;
+    color: var(--accent);
+    font-size: 14px;
+}
+
+.painel-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+}
+.cartas-grandes {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 35px;
+    transform: rotate(-4deg);
+}
+.cartas-grandes div {
+    width: 85px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f8f8;
+    color: #16211e;
+    border-radius: 10px;
+    font-size: 55px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+.painel-visual h2 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+.painel-visual p {
+    max-width: 500px;
+    color: var(--text-muted);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.rodape {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    color: var(--text-muted);
+    font-size: 20px;
+}
+
+@media (max-width: 800px) {
+    .topo { height: 80px; padding: 0 20px; }
+    .logo h1 { font-size: 23px; }
+    .cartas-logo span { width: 24px; height: 35px; font-size: 16px; }
+    .inicio { grid-template-columns: 1fr; }
+    .painel-criar {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+        padding: 50px 25px;
+    }
+    .painel-visual { padding: 60px 25px; }
+    .cartas-grandes div { width: 60px; height: 90px; font-size: 40px; }
+}
+
+.entrada #nomeJogador {
+    text-align: left;
+    letter-spacing: normal;
+    text-transform: none;
+    padding: 0 16px;
+}
+.entrada > #nomeJogador {
+    width: 100%;
+    flex: none;
+}

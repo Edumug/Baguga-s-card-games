@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossário de Truco Paulista — Termos, Manilhas e Regras</title>
+  <meta name="description" content="Glossário completo do Truco Paulista: manilha, vira, truco, seis, nove, doze, mão de onze e todos os termos do jogo. Jogue online no Jogos do Rei.">
+  <meta name="keywords" content="glossário truco, termos truco paulista, manilha truco, vira truco, mão de onze, regras truco">
+  <meta name="author" content="Jogos do Rei">
+  <meta property="og:title" content="Glossário de Truco Paulista — Jogos do Rei">
+  <meta property="og:description" content="Todos os termos e regras do Truco Paulista: manilha, vira, truco, seis, nove, doze, mão de onze e muito mais.">
+  <meta property="og:url" content="https://jogosdorei.github.io/glossario-buraco/truco.html">
+  <link rel="canonical" href="https://jogosdorei.github.io/glossario-buraco/truco.html">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f5f0;
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #2d6a1f 0%, #3d8a28 100%);
+      color: white;
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+    header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 20px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+    }
+    nav {
+      background: #235218;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      padding: 0.65rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: background 0.15s, color 0.15s;
+    }
+    nav a:hover, nav a.active {
+      background: rgba(255,255,255,0.12);
+      color: white;
+    }
+    nav a.active {
+      border-bottom: 3px solid #a8d890;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .intro {
+      background: white;
+      border-left: 4px solid #3d8a28;
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+    .intro a { color: #3d8a28; font-weight: 600; text-decoration: none; }
+    .intro a:hover { text-decoration: underline; }
+    h2 {
+      font-size: 1.5rem;
+      color: #2d6a1f;
+      border-bottom: 2px solid #c8e0c0;
+      padding-bottom: 0.5rem;
+      margin: 2.5rem 0 1.25rem;
+    }
+    h2 span { font-size: 1.1rem; margin-right: 0.5rem; }
+    .term-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 600px) {
+      .term-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .term-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-top: 3px solid #3d8a28;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .term-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .term-card h3 {
+      font-size: 1.1rem;
+      color: #2d6a1f;
+      margin-bottom: 0.5rem;
+    }
+    .term-card p { font-size: 0.95rem; color: #444; }
+    .term-card .tag {
+      display: inline-block;
+      background: #e0f0d8;
+      color: #3d8a28;
+      border-radius: 4px;
+      padding: 0.1rem 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .cta {
+      background: linear-gradient(135deg, #2d6a1f, #3d8a28);
+      color: white;
+      border-radius: 12px;
+      padding: 2rem 2rem;
+      text-align: center;
+      margin: 3rem 0 2rem;
+    }
+    .cta h2 { color: white; border: none; margin: 0 0 0.75rem; font-size: 1.4rem; }
+    .cta p { margin-bottom: 1.25rem; opacity: 0.9; font-size: 1rem; }
+    .cta a {
+      display: inline-block;
+      background: white;
+      color: #2d6a1f;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: opacity 0.15s;
+    }
+    .cta a:hover { opacity: 0.85; }
+    .pontos-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 1rem;
+    }
+    .pontos-table th {
+      background: #2d6a1f;
+      color: white;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    .pontos-table td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid #e8f3e0;
+      font-size: 0.95rem;
+    }
+    .pontos-table tr:last-child td { border-bottom: none; }
+    .pontos-table tr:nth-child(even) td { background: #f5faf2; }
+    .pts { font-weight: 700; color: #3d8a28; }
+    footer {
+      background: #2c2c2c;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+    footer a { color: #a8d890; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .search-box {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: 2px solid #c0dab0;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-box input:focus { border-color: #3d8a28; }
+    #no-results { display: none; color: #888; text-align: center; padding: 2rem; }
+    .manilha-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 1.5rem;
+    }
+    .manilha-table th {
+      background: #2d6a1f;
+      color: white;
+      padding: 0.65rem 1rem;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+    .manilha-table td {
+      padding: 0.55rem 1rem;
+      border-bottom: 1px solid #e8f3e0;
+      font-size: 0.93rem;
+    }
+    .manilha-table tr:last-child td { border-bottom: none; }
+    .manilha-table tr:nth-child(even) td { background: #f5faf2; }
+    .rank { font-weight: 700; color: #2d6a1f; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>⚔️ Glossário de Truco Paulista</h1>
+  <p>Todos os termos, regras e estratégias do Truco Paulista explicados de forma clara</p>
+  <span class="badge">Referência completa • Atualizado em 2026</span>
+</header>
+
+<nav>
+  <a href="./index.html">🃏 Buraco</a>
+  <a href="./stbl.html">♠️ STBL</a>
+  <a href="./tranca.html">🔒 Tranca</a>
+  <a href="./truco.html" class="active">⚔️ Truco</a>
+  <a href="./sueca.html">🎴 Sueca</a>
+  <a href="./domino.html">🁢 Dominó</a>
+  <a href="./comparativo.html">📋 Comparativo</a>
+</nav>
+
+<div class="container">
+
+  <div class="intro">
+    <strong>Truco Paulista</strong> é um jogo de cartas para 4 jogadores (2 duplas) usando um baralho de <strong>40 cartas</strong> (sem 8, 9, 10 e Curingas). O objetivo é chegar a <strong>12 pontos</strong> antes do adversário, vencendo turnos disputados em melhor de 3 rodadas. Jogue online no <a href="https://www.jogosdorei.com.br/jogar-truco-online.php" target="_blank" rel="noopener">Jogos do Rei</a>.
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="🔍 Buscar termo... (ex: manilha, vira, truco, mão de onze)" oninput="filtrarTermos()">
+  </div>
+  <p id="no-results">Nenhum termo encontrado. Tente outra busca.</p>
+
+  <!-- SEÇÃO: Estrutura -->
+  <h2><span>🎴</span> Estrutura do Jogo</h2>
+  <div class="term-grid" id="section-estrutura">
+
+    <div class="term-card" data-termo="baralho cartas 40 deck truco paulista">
+      <span class="tag">Estrutura</span>
+      <h3>Baralho</h3>
+      <p>O Truco Paulista usa <strong>40 cartas</strong>: um baralho francês padrão do qual se retiram os 8s, 9s, 10s e os Curingas (Jokers). As cartas válidas vão de 4 a 7, depois Ás (A), 2, 3, J (Valete), Q (Dama) e K (Rei).</p>
+    </div>
+
+    <div class="term-card" data-termo="jogadores dupla parceiro 4">
+      <span class="tag">Estrutura</span>
+      <h3>Jogadores</h3>
+      <p>Sempre <strong>4 jogadores</strong>, formando <strong>2 duplas</strong>. Seu parceiro senta à sua frente; os adversários ficam um à esquerda e outro à direita.</p>
+    </div>
+
+    <div class="term-card" data-termo="turno rodada 3 melhor de">
+      <span class="tag">Estrutura</span>
+      <h3>Turno</h3>
+      <p>Cada turno é disputado em <strong>melhor de 3 rodadas</strong>. A dupla que ganhar 2 ou mais rodadas vence o turno. Um turno começa valendo 1 ponto e pode ser escalado até 12.</p>
+    </div>
+
+    <div class="term-card" data-termo="partida 12 pontos vencer">
+      <span class="tag">Estrutura</span>
+      <h3>Partida</h3>
+      <p>Vence a partida a <strong>dupla que atingir 12 pontos</strong> primeiro. Os pontos são acumulados turno a turno. Cada turno vale de 1 a 12 pontos, dependendo das apostas.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Vira e Manilha -->
+  <h2><span>🎯</span> Vira e Manilha — O Coração do Truco</h2>
+  <div class="term-grid" id="section-manilha">
+
+    <div class="term-card" data-termo="vira carta virada definir manilha">
+      <span class="tag">Regra Central</span>
+      <h3>Vira</h3>
+      <p>No início de cada turno, uma carta é <strong>virada pelo sistema</strong> — essa carta é o "vira". A vira define quais são as manilhas daquele turno. Se virou um 3, as manilhas são os 4s. Se virou um 5, as manilhas são os 6s.</p>
+    </div>
+
+    <div class="term-card" data-termo="manilha carta mais forte paus copas espadas ouros">
+      <span class="tag">Regra Central</span>
+      <h3>Manilha</h3>
+      <p>As <strong>4 cartas mais fortes do jogo</strong>, definidas a cada turno. A manilha é a carta <strong>imediatamente seguinte ao vira</strong> na sequência do baralho. Há 4 manilhas (uma por naipe), com a seguinte força:</p>
+      <p style="margin-top:0.5rem;"><strong>Paus (Zap) &gt; Copas &gt; Espadas &gt; Ouros</strong></p>
+    </div>
+
+  </div>
+
+  <!-- Tabela de exemplos de manilha -->
+  <table class="manilha-table">
+    <thead>
+      <tr>
+        <th>Se a vira for...</th>
+        <th>As manilhas são...</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>3 (qualquer naipe)</td><td><strong>4</strong> (quatro)</td></tr>
+      <tr><td>4 (qualquer naipe)</td><td><strong>5</strong> (cinco)</td></tr>
+      <tr><td>5 (qualquer naipe)</td><td><strong>6</strong> (seis)</td></tr>
+      <tr><td>6 (qualquer naipe)</td><td><strong>7</strong> (sete)</td></tr>
+      <tr><td>7 (qualquer naipe)</td><td><strong>Q</strong> (Dama)</td></tr>
+      <tr><td>Q (qualquer naipe)</td><td><strong>J</strong> (Valete)</td></tr>
+      <tr><td>J (qualquer naipe)</td><td><strong>K</strong> (Rei)</td></tr>
+      <tr><td>K (qualquer naipe)</td><td><strong>A</strong> (Ás)</td></tr>
+      <tr><td>A (qualquer naipe)</td><td><strong>2</strong> (dois)</td></tr>
+      <tr><td>2 (qualquer naipe)</td><td><strong>3</strong> (três)</td></tr>
+    </tbody>
+  </table>
+
+  <!-- SEÇÃO: Apostas -->
+  <h2><span>🔥</span> Apostas — Truco, Seis, Nove e Doze</h2>
+  <div class="term-grid" id="section-apostas">
+
+    <div class="term-card" data-termo="truco pedido aposta aumento 3 pontos">
+      <span class="tag">Aposta</span>
+      <h3>Truco</h3>
+      <p>Pedido de aumento de aposta. Pode ser feito apenas na sua vez. Se o adversário <strong>aceitar</strong>, o turno passa a valer <strong>3 pontos</strong>. Se <strong>recusar</strong> (correr), a dupla desafiadora ganha <strong>1 ponto</strong>.</p>
+    </div>
+
+    <div class="term-card" data-termo="seis aumento aposta 6 pontos">
+      <span class="tag">Aposta</span>
+      <h3>Seis</h3>
+      <p>Aumento após o Truco. Se o adversário <strong>aceitar</strong>, o turno vale <strong>6 pontos</strong>. Se <strong>recusar</strong>, a dupla desafiadora ganha <strong>3 pontos</strong>.</p>
+    </div>
+
+    <div class="term-card" data-termo="nove aumento aposta 9 pontos">
+      <span class="tag">Aposta</span>
+      <h3>Nove</h3>
+      <p>Aumento após o Seis. Se o adversário <strong>aceitar</strong>, o turno vale <strong>9 pontos</strong>. Se <strong>recusar</strong>, a dupla desafiadora ganha <strong>6 pontos</strong>.</p>
+    </div>
+
+    <div class="term-card" data-termo="doze aumento aposta 12 pontos jogo">
+      <span class="tag">Aposta</span>
+      <h3>Doze</h3>
+      <p>Aumento máximo — após o Nove. Se o adversário <strong>aceitar</strong>, o turno vale <strong>12 pontos</strong> (o jogo inteiro). Se <strong>recusar</strong>, a dupla desafiadora ganha <strong>9 pontos</strong>.</p>
+    </div>
+
+    <div class="term-card" data-termo="correr fugir recusar aposta pontos adversário">
+      <span class="tag">Aposta</span>
+      <h3>Correr (Recusar)</h3>
+      <p>Recusar o pedido de truco/seis/nove/doze. Quando uma dupla recusa, o adversário ganha automaticamente os <strong>pontos do nível anterior</strong>. Correr pode ser tático para salvar a partida.</p>
+    </div>
+
+    <div class="term-card" data-termo="blefe esconder carta tática">
+      <span class="tag">Tática</span>
+      <h3>Blefe / Esconder Carta</h3>
+      <p>Tática comum no Truco: pedir aumento sem ter cartas fortes. Também é possível <strong>esconder uma carta</strong> (em vez de baixar) para blefar o adversário — não é permitido na primeira rodada.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Situações Especiais -->
+  <h2><span>⭐</span> Situações Especiais</h2>
+  <div class="term-grid" id="section-especiais">
+
+    <div class="term-card" data-termo="mão de onze 11 pontos ver cartas parceiro">
+      <span class="tag">Especial</span>
+      <h3>Mão de Onze</h3>
+      <p>Quando uma dupla chega a <strong>11 pontos</strong>, ela tem o direito de <strong>ver as cartas do parceiro</strong> antes de decidir se joga o turno. Se aceitar, o turno já começa valendo <strong>3 pontos</strong>. Se recusar, o adversário ganha <strong>1 ponto</strong>.</p>
+    </div>
+
+    <div class="term-card" data-termo="mão de ferro 11 pontos ambas duplas especial">
+      <span class="tag">Especial</span>
+      <h3>Mão de Ferro</h3>
+      <p>A Mão de Onze especial: quando <strong>ambas as duplas chegam a 11 pontos</strong> ao mesmo tempo. Situação de máxima tensão na partida — a próxima vitória define o jogo.</p>
+    </div>
+
+    <div class="term-card" data-termo="empate rodada desempate regra">
+      <span class="tag">Especial</span>
+      <h3>Empates</h3>
+      <p>Regras de desempate: se empatar na <strong>1ª rodada</strong>, vence quem ganhar a 2ª. Se empatar na <strong>2ª</strong>, vence quem ganhou a 1ª. Se todas empatarem, <strong>ninguém pontua</strong> naquele turno.</p>
+    </div>
+
+    <div class="term-card" data-termo="sinais comunicação parceiro ícones piscar sobrancelha">
+      <span class="tag">Especial</span>
+      <h3>Sinais ao Parceiro</h3>
+      <p>No Jogos do Rei, há <strong>4 sinais</strong> para comunicar ao parceiro quais manilhas você tem: <strong>Piscar</strong> = manilha de Paus (Zap), <strong>Sobrancelha</strong> = Copas, <strong>Bochecha</strong> = Espadas, <strong>Língua</strong> = Ouros. Só seu parceiro vê.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Força das Cartas -->
+  <h2><span>📊</span> Força das Cartas (do mais forte ao mais fraco)</h2>
+
+  <table class="pontos-table">
+    <thead>
+      <tr>
+        <th>Posição</th>
+        <th>Carta (Baralho Francês)</th>
+        <th>Observação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="rank">1º</td><td>Manilha de Paus</td><td>Zap — a mais forte</td></tr>
+      <tr><td class="rank">2º</td><td>Manilha de Copas</td><td>—</td></tr>
+      <tr><td class="rank">3º</td><td>Manilha de Espadas</td><td>—</td></tr>
+      <tr><td class="rank">4º</td><td>Manilha de Ouros</td><td>—</td></tr>
+      <tr><td class="rank">5º</td><td>Três (qualquer naipe)</td><td>—</td></tr>
+      <tr><td class="rank">6º</td><td>Dois (qualquer naipe)</td><td>—</td></tr>
+      <tr><td class="rank">7º</td><td>Ás (qualquer naipe)</td><td>—</td></tr>
+      <tr><td class="rank">8º</td><td>Rei — K (qualquer naipe)</td><td>—</td></tr>
+      <tr><td class="rank">9º</td><td>Valete — J (qualquer naipe)</td><td>—</td></tr>
+      <tr><td class="rank">10º</td><td>Dama — Q (qualquer naipe)</td><td>—</td></tr>
+      <tr><td class="rank">11º</td><td>Sete (qualquer naipe)</td><td>—</td></tr>
+      <tr><td class="rank">12º</td><td>Seis (qualquer naipe)</td><td>—</td></tr>
+      <tr><td class="rank">13º</td><td>Cinco (qualquer naipe)</td><td>—</td></tr>
+      <tr><td class="rank">14º</td><td>Quatro (qualquer naipe)</td><td>A mais fraca</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:0.88rem;color:#666;margin-bottom:2rem;"><em>* As manilhas ocupam sempre as 4 primeiras posições, independentemente de qual carta seja o vira. A ordem de força entre as manilhas é sempre: Paus &gt; Copas &gt; Espadas &gt; Ouros.</em></p>
+
+  <!-- SEÇÃO: Como Jogar -->
+  <h2><span>🎮</span> Como se Joga</h2>
+  <div class="term-grid" id="section-como">
+
+    <div class="term-card" data-termo="distribuir cartas 3 cada jogador">
+      <span class="tag">Como Jogar</span>
+      <h3>Distribuição</h3>
+      <p>Cada jogador recebe <strong>3 cartas</strong> (visíveis apenas para o próprio jogador). Após a distribuição, a carta do topo do restante do baralho é virada — essa é o <em>vira</em>, que define as manilhas.</p>
+    </div>
+
+    <div class="term-card" data-termo="jogar carta baixar mesa rodada">
+      <span class="tag">Como Jogar</span>
+      <h3>Jogando uma Rodada</h3>
+      <p>Em cada rodada, cada jogador <strong>baixa uma carta</strong> na mesa. A carta mais forte ganha a rodada para sua dupla. Em caso de empate na força, a rodada empata. O turno termina quando uma dupla vencer 2 rodadas.</p>
+    </div>
+
+    <div class="term-card" data-termo="pedir truco aumentar aposta momento">
+      <span class="tag">Como Jogar</span>
+      <h3>Quando Pedir Truco</h3>
+      <p>Você pode pedir Truco (ou aumentar a aposta) na <strong>sua vez de jogar</strong>. Não é permitido pedir Truco quando sua dupla está com 11 pontos — isso resulta em derrota imediata do turno.</p>
+    </div>
+
+    <div class="term-card" data-termo="limite tempo 20 segundos automático">
+      <span class="tag">Como Jogar</span>
+      <h3>Limite de Tempo</h3>
+      <p>No Jogos do Rei, cada jogador tem <strong>20 segundos</strong> para jogar sua carta. Se o tempo esgotar, o sistema joga uma carta aleatória automaticamente.</p>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Pronto para jogar Truco?</h2>
+    <p>Jogue Truco Paulista online contra adversários reais no Jogos do Rei — direto no navegador ou pelo app. Partidas rápidas com ranking e campeonatos.</p>
+    <a href="https://www.jogosdorei.com.br/jogar-truco-online.php" target="_blank" rel="noopener">Jogar Truco Agora — É Grátis ⚔️</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>Glossário criado por <a href="https://www.jogosdorei.com.br" target="_blank" rel="noopener">Jogos do Rei</a> — a maior plataforma de jogos de cartas do Brasil desde 2010.</p>
+  <p style="margin-top:0.5rem; font-size:0.8rem;">Buraco • Canastra • Tranca • Truco — Campeonatos diários com jogadores reais.</p>
+</footer>
+
+<script>
+  function filtrarTermos() {
+    const q = document.getElementById('search').value.toLowerCase();
+    const cards = document.querySelectorAll('.term-card');
+    let found = 0;
+    cards.forEach(card => {
+      const text = (card.getAttribute('data-termo') + ' ' + card.innerText).toLowerCase();
+      const match = !q || text.includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) found++;
+    });
+    document.getElementById('no-results').style.display = (found === 0 && q) ? 'block' : 'none';
+  }
+</script>
+
+</body>
+</html>

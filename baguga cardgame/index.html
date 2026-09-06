@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baguga's Card Game</title>
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+
+<header class="topo">
+    <div class="logo">
+        <div class="cartas-logo">
+            <span>♠</span><span>♥</span><span>♦</span><span>♣</span>
+        </div>
+        <h1>Baguga's Card Game</h1>
+    </div>
+</header>
+
+<main class="inicio">
+    <section class="painel-criar">
+        <button id="btnCriarSala" class="btn btn-principal">🃏 Criar Sala</button>
+        <div class="separador"><span></span><label>OU</label><span></span></div>
+        <div class="entrada">
+            <label for="nomeJogador">Seu nome</label>
+            <input id="nomeJogador" type="text" maxlength="24" placeholder="Digite seu nome" autocomplete="name">
+            <label for="codigoSala">Código da sala</label>
+            <div class="entrada-linha">
+                <input id="codigoSala" type="text" maxlength="5" placeholder="ABCDE" autocomplete="off">
+                <button id="btnEntrarSala" class="btn btn-secundario">Entrar</button>
+            </div>
+        </div>
+        <p id="mensagem" class="mensagem"></p>
+    </section>
+
+    <section class="painel-visual">
+        <div class="cartas-grandes"><div>♠</div><div>♥</div><div>♦</div><div>♣</div></div>
+        <h2>Jogue com seus amigos</h2>
+        <p>Crie uma sala, convide seus amigos e escolha seu jogo de cartas.</p>
+    </section>
+</main>
+
+<footer class="rodape"><span>♠</span><span>♥</span><span>♣</span><span>♦</span></footer>
+
+<script type="module" src="js/menu.js?v=2"></script>
+</body>
+</html>

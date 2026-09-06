@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala</title>
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/sala.css">
+</head>
+<body>
+
+<main class="sala">
+    <header class="cabecalho">
+        <div><span class="subtitulo">SALA PRIVADA</span><h1>Sala de jogo</h1></div>
+        <div class="codigo-box"><span>CÓDIGO</span><strong id="codigoExibido">-----</strong><button id="btnCopiarCodigo">Copiar</button></div>
+    </header>
+
+    <section class="conteudo">
+        <div class="painel jogadores-panel">
+            <div class="painel-titulo">
+                <div><span class="subtitulo">PARTICIPANTES</span><h2>Jogadores</h2></div>
+                <span id="statusTexto" class="status">Aguardando</span>
+            </div>
+            <div id="listaJogadores" class="lista-jogadores"></div>
+            <button id="btnAdicionarBot" class="btn-bot">🤖 Adicionar BOT</button>
+        </div>
+        <div class="painel configuracao">
+            <span class="subtitulo">PRÓXIMO PASSO</span>
+            <h2>Tudo pronto?</h2>
+            <p>Quando houver jogadores suficientes, o dono da sala poderá escolher o jogo.</p>
+            <div id="mensagemSala" class="mensagem"></div>
+            <button id="btnIniciar" class="btn-principal">Escolher jogo</button>
+            <button id="btnSair" class="btn-sair">Sair da sala</button>
+        </div>
+    </section>
+</main>
+
+<script type="module" src="js/sala.js?v=2"></script>
+</body>
+</html>

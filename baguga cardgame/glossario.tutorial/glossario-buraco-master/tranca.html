@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossário de Tranca — Termos, 3 Preto e Regras do Jogo</title>
+  <meta name="description" content="Glossário completo da Tranca: termos, regras e expressões do jogo. Aprenda o que é 3 preto, 3 vermelho, canastra suja e como jogar Tranca online.">
+  <meta name="keywords" content="glossário tranca, termos tranca, 3 preto tranca, 3 vermelho tranca, regras tranca, canastra tranca">
+  <meta name="author" content="Jogos do Rei">
+  <meta property="og:title" content="Glossário de Tranca — Jogos do Rei">
+  <meta property="og:description" content="Todos os termos e regras da Tranca explicados de forma clara. 3 preto, 3 vermelho, canastra suja e muito mais.">
+  <meta property="og:url" content="https://jogosdorei.github.io/glossario-buraco/tranca.html">
+  <link rel="canonical" href="https://jogosdorei.github.io/glossario-buraco/tranca.html">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f5f0;
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #1a4a7c 0%, #2563a8 100%);
+      color: white;
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+    header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 20px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+    }
+    nav {
+      background: #133a62;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      padding: 0.65rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: background 0.15s, color 0.15s;
+    }
+    nav a:hover, nav a.active {
+      background: rgba(255,255,255,0.12);
+      color: white;
+    }
+    nav a.active {
+      border-bottom: 3px solid #90c4f0;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .intro {
+      background: white;
+      border-left: 4px solid #2563a8;
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+    .intro a { color: #2563a8; font-weight: 600; text-decoration: none; }
+    .intro a:hover { text-decoration: underline; }
+    h2 {
+      font-size: 1.5rem;
+      color: #1a4a7c;
+      border-bottom: 2px solid #d0dff0;
+      padding-bottom: 0.5rem;
+      margin: 2.5rem 0 1.25rem;
+    }
+    h2 span { font-size: 1.1rem; margin-right: 0.5rem; }
+    .term-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 600px) {
+      .term-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .term-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-top: 3px solid #2563a8;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .term-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .term-card h3 {
+      font-size: 1.1rem;
+      color: #1a4a7c;
+      margin-bottom: 0.5rem;
+    }
+    .term-card p { font-size: 0.95rem; color: #444; }
+    .term-card .tag {
+      display: inline-block;
+      background: #e3edf8;
+      color: #2563a8;
+      border-radius: 4px;
+      padding: 0.1rem 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .cta {
+      background: linear-gradient(135deg, #1a4a7c, #2563a8);
+      color: white;
+      border-radius: 12px;
+      padding: 2rem 2rem;
+      text-align: center;
+      margin: 3rem 0 2rem;
+    }
+    .cta h2 { color: white; border: none; margin: 0 0 0.75rem; font-size: 1.4rem; }
+    .cta p { margin-bottom: 1.25rem; opacity: 0.9; font-size: 1rem; }
+    .cta a {
+      display: inline-block;
+      background: white;
+      color: #1a4a7c;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: opacity 0.15s;
+    }
+    .cta a:hover { opacity: 0.85; }
+    .pontos-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 1rem;
+    }
+    .pontos-table th {
+      background: #1a4a7c;
+      color: white;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    .pontos-table td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid #e8f0f8;
+      font-size: 0.95rem;
+    }
+    .pontos-table tr:last-child td { border-bottom: none; }
+    .pontos-table tr:nth-child(even) td { background: #f5f9ff; }
+    .pts { font-weight: 700; color: #2563a8; }
+    .pts-neg { font-weight: 700; color: #c0392b; }
+    footer {
+      background: #2c2c2c;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+    footer a { color: #90c4f0; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .search-box {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: 2px solid #c5d8ed;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-box input:focus { border-color: #2563a8; }
+    #no-results { display: none; color: #888; text-align: center; padding: 2rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🔒 Glossário de Tranca</h1>
+  <p>Todos os termos, regras e expressões da Tranca explicados de forma clara</p>
+  <span class="badge">Referência completa • Atualizado em 2026</span>
+</header>
+
+<nav>
+  <a href="./index.html">🃏 Buraco</a>
+  <a href="./stbl.html">♠️ STBL</a>
+  <a href="./tranca.html" class="active">🔒 Tranca</a>
+  <a href="./truco.html">⚔️ Truco</a>
+  <a href="./sueca.html">🎴 Sueca</a>
+  <a href="./domino.html">🁢 Dominó</a>
+  <a href="./comparativo.html">📋 Comparativo</a>
+</nav>
+
+<div class="container">
+
+  <div class="intro">
+    <strong>Tranca</strong> é um jogo de cartas para 2 ou 4 jogadores, derivado do Buraco, mas com regras próprias que o tornam único: o <strong>3 preto tranca a mesa</strong>, o <strong>3 vermelho pode valer +100 ou −100 pontos</strong>, e as canastras sujas <strong>não podem ser limpadas</strong>. Jogue online gratuitamente no <a href="https://www.jogosdorei.com.br/jogar-tranca-online.php" target="_blank" rel="noopener">Jogos do Rei</a>.
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="🔍 Buscar termo... (ex: 3 preto, canastra, trinca)" oninput="filtrarTermos()">
+  </div>
+  <p id="no-results">Nenhum termo encontrado. Tente outra busca.</p>
+
+  <!-- SEÇÃO: Estrutura do jogo -->
+  <h2><span>🎴</span> Estrutura do Jogo</h2>
+  <div class="term-grid" id="section-estrutura">
+
+    <div class="term-card" data-termo="baralho cartas deck tranca">
+      <span class="tag">Estrutura</span>
+      <h3>Baralho</h3>
+      <p>A Tranca usa <strong>104 cartas</strong> (2 baralhos completos, sem o Curingão/Joker). Os dois baralhos são embaralhados juntos antes de cada partida.</p>
+    </div>
+
+    <div class="term-card" data-termo="jogadores dupla parceiro">
+      <span class="tag">Estrutura</span>
+      <h3>Jogadores</h3>
+      <p>A Tranca pode ser jogada com <strong>2 ou 4 pessoas</strong>. Com 4 jogadores, formam-se duas duplas: seu parceiro senta à sua frente, os adversários ficam às laterais.</p>
+    </div>
+
+    <div class="term-card" data-termo="monte deck pilha compra">
+      <span class="tag">Estrutura</span>
+      <h3>Monte</h3>
+      <p>A pilha de cartas viradas para baixo no centro da mesa. Os jogadores compram do Monte uma carta por vez na sua vez.</p>
+    </div>
+
+    <div class="term-card" data-termo="lixo descarte pilha comprar topo">
+      <span class="tag">Estrutura</span>
+      <h3>Lixo (Descarte)</h3>
+      <p>A pilha de cartas descartadas. Você pode pegar <strong>todas</strong> as cartas do lixo, desde que justifique o uso da carta do topo em um jogo válido imediatamente.</p>
+    </div>
+
+    <div class="term-card" data-termo="morto pilha escondida pegar">
+      <span class="tag">Estrutura</span>
+      <h3>Morto</h3>
+      <p>Monte fechado separado antes do início da partida. O jogador que fizer a <em>batida direta</em> pega um morto e incorpora as cartas à sua mão.</p>
+    </div>
+
+    <div class="term-card" data-termo="trinca mesmo valor três cartas">
+      <span class="tag">Estrutura</span>
+      <h3>Trinca</h3>
+      <p>Na Tranca — ao contrário do Buraco clássico — é <strong>permitido fazer trinca</strong>: um jogo com 3 ou mais cartas do mesmo valor (ex.: três Reis, quatro 7s). É uma das principais diferenças entre os jogos.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Cartas Especiais -->
+  <h2><span>🃏</span> Cartas Especiais — O 3 Preto e o 3 Vermelho</h2>
+  <div class="term-grid" id="section-cartas">
+
+    <div class="term-card" data-termo="3 preto espadas paus trancar mesa">
+      <span class="tag">Carta Especial</span>
+      <h3>3 Preto (Espadas e Paus)</h3>
+      <p>O 3 de espadas ♠ e o 3 de paus ♣ são os <strong>curinga defensivos</strong> da Tranca. Quando descartado no lixo, <strong>tranca a mesa</strong>: o próximo jogador fica impedido de pegar o lixo e deve comprar do Monte.</p>
+    </div>
+
+    <div class="term-card" data-termo="3 vermelho copas ouros 100 pontos positivo negativo">
+      <span class="tag">Carta Especial</span>
+      <h3>3 Vermelho (Copas e Ouros)</h3>
+      <p>O 3 de copas ♥ e o 3 de ouros ♦ têm valor condicional. Se sua dupla tiver feito pelo menos uma canastra: vale <strong>+100 pontos</strong>. Se não tiver canastra: vale <strong>−100 pontos</strong>. Segure com cuidado!</p>
+    </div>
+
+    <div class="term-card" data-termo="curinga dois substituto carta">
+      <span class="tag">Carta</span>
+      <h3>Curinga (o "Dois")</h3>
+      <p>O número <strong>2</strong> de qualquer naipe funciona como curinga — substitui qualquer carta em uma sequência. Cada baralho tem 4 curingas (total de 8 no jogo). Vale <strong>10 pontos</strong> se ficar na mão.</p>
+    </div>
+
+    <div class="term-card" data-termo="ás ace carta alta pontuação">
+      <span class="tag">Carta</span>
+      <h3>Ás</h3>
+      <p>Carta mais valiosa individualmente: vale <strong>15 pontos</strong> se ficar na mão ao final da partida. Estratégico em sequências de alto valor.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Canastras -->
+  <h2><span>✨</span> Canastras na Tranca</h2>
+  <div class="term-grid" id="section-canastras">
+
+    <div class="term-card" data-termo="canastra sete cartas sequência">
+      <span class="tag">Canastra</span>
+      <h3>Canastra</h3>
+      <p>Um jogo com <strong>7 ou mais cartas</strong> na mesa. Pelo menos uma canastra limpa é obrigatória para fazer a batida final.</p>
+    </div>
+
+    <div class="term-card" data-termo="canastra limpa sem curinga 200 pontos">
+      <span class="tag">Canastra</span>
+      <h3>Canastra Limpa</h3>
+      <p>7+ cartas em sequência <strong>sem nenhum curinga</strong>. Vale <strong>200 pontos</strong> e é obrigatória para bater. Também determina se o 3 vermelho é positivo ou negativo.</p>
+    </div>
+
+    <div class="term-card" data-termo="canastra suja com curinga 100 pontos não pode limpar">
+      <span class="tag">Canastra</span>
+      <h3>Canastra Suja</h3>
+      <p>7+ cartas com pelo menos um curinga (o "2"). Vale <strong>100 pontos</strong>. <strong>Atenção:</strong> na Tranca, a canastra suja <strong>não pode ser limpada</strong> — o 3 não é usado em jogos regulares, o que impede a substituição do curinga.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Ações -->
+  <h2><span>🤲</span> Ações do Jogo</h2>
+  <div class="term-grid" id="section-acoes">
+
+    <div class="term-card" data-termo="comprar carta monte lixo">
+      <span class="tag">Ação</span>
+      <h3>Comprar</h3>
+      <p>Primeira ação da sua vez. Você pode comprar <strong>1 carta do Monte</strong> ou <strong>todas as cartas do Lixo</strong> (justificando com a carta do topo). Se a mesa estiver trancada pelo 3 preto, só é possível comprar do Monte.</p>
+    </div>
+
+    <div class="term-card" data-termo="baixar jogo mesa">
+      <span class="tag">Ação</span>
+      <h3>Baixar Jogo</h3>
+      <p>Colocar um jogo válido na mesa: sequências do mesmo naipe ou trincas (3+ cartas do mesmo valor). Uma vez baixado, seu parceiro também pode encaixar cartas.</p>
+    </div>
+
+    <div class="term-card" data-termo="descartar lixo final turno">
+      <span class="tag">Ação</span>
+      <h3>Descartar</h3>
+      <p>A última ação de cada turno: colocar uma carta no Lixo. Se você descartar um 3 preto, a mesa fica trancada para o próximo jogador.</p>
+    </div>
+
+    <div class="term-card" data-termo="trancar mesa 3 preto impedido lixo">
+      <span class="tag">Ação</span>
+      <h3>Trancar a Mesa</h3>
+      <p>Ação exclusiva da Tranca. Quando um jogador descarta o <strong>3 preto</strong>, o próximo jogador fica impedido de comprar o lixo — ele só pode comprar do Monte.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Batidas -->
+  <h2><span>🏆</span> Tipos de Batida</h2>
+  <div class="term-grid" id="section-batidas">
+
+    <div class="term-card" data-termo="bater ganhar rodada sem cartas">
+      <span class="tag">Batida</span>
+      <h3>Bater</h3>
+      <p>Ficar sem cartas na mão, encerrando a rodada. Para bater, o time precisa ter <strong>pelo menos uma canastra limpa</strong> na mesa.</p>
+    </div>
+
+    <div class="term-card" data-termo="batida direta última carta mesa jogo morto">
+      <span class="tag">Batida</span>
+      <h3>Batida Direta</h3>
+      <p>A última carta é <strong>baixada na mesa ou encaixada em um jogo</strong> (não descartada). O jogador pega o morto imediatamente e pode continuar baixando jogos.</p>
+    </div>
+
+    <div class="term-card" data-termo="batida indireta última carta lixo descarte">
+      <span class="tag">Batida</span>
+      <h3>Batida Indireta</h3>
+      <p>A última carta é <strong>descartada no lixo</strong>. O jogador só poderá usar as cartas do morto na <em>próxima rodada</em>.</p>
+    </div>
+
+    <div class="term-card" data-termo="batida final encerrar partida 100 pontos">
+      <span class="tag">Batida</span>
+      <h3>Batida Final</h3>
+      <p>Quando o time já pegou o morto e um jogador fica sem cartas. <strong>Encerra a partida.</strong> Exige ao menos uma canastra limpa. Vale <strong>+100 pontos</strong> para o time vencedor.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Pontuação -->
+  <h2><span>📊</span> Pontuação — Referência Rápida</h2>
+
+  <table class="pontos-table">
+    <thead>
+      <tr>
+        <th>Evento / Carta</th>
+        <th>Pontos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Batida Final</td><td class="pts">+100</td></tr>
+      <tr><td>Canastra Limpa</td><td class="pts">+200</td></tr>
+      <tr><td>Canastra Suja</td><td class="pts">+100</td></tr>
+      <tr><td>3 Vermelho (com canastra)</td><td class="pts">+100</td></tr>
+      <tr><td>3 Vermelho (sem canastra)</td><td class="pts-neg">−100</td></tr>
+      <tr><td>Ás</td><td class="pts">+15</td></tr>
+      <tr><td>Do 8 ao Rei (K)</td><td class="pts">+10</td></tr>
+      <tr><td>Curinga (Dois)</td><td class="pts">+10</td></tr>
+      <tr><td>Do 4 ao 7</td><td class="pts">+5</td></tr>
+      <tr><td>Não pegar o morto</td><td class="pts-neg">−100</td></tr>
+      <tr><td>Cartas na mão (penalidade)</td><td class="pts-neg">−valor</td></tr>
+    </tbody>
+  </table>
+
+  <!-- SEÇÃO: Diferenças vs Buraco -->
+  <h2><span>🔄</span> Tranca vs Buraco — Principais Diferenças</h2>
+  <div class="term-grid" id="section-diferencas">
+
+    <div class="term-card" data-termo="diferença buraco trinca">
+      <span class="tag">Comparativo</span>
+      <h3>Trinca: Permitida na Tranca</h3>
+      <p>No Buraco clássico, não se faz trinca. Na Tranca, você pode baixar <strong>3 ou mais cartas do mesmo valor</strong> (ex.: três Rainhas, quatro 5s). Isso amplia as possibilidades de jogo.</p>
+    </div>
+
+    <div class="term-card" data-termo="canastra suja limpar diferença">
+      <span class="tag">Comparativo</span>
+      <h3>Canastra Suja: Não Pode Limpar</h3>
+      <p>No Buraco, uma canastra suja pode ser "limpa" substituindo o curinga pela carta natural. Na Tranca, <strong>isso não é possível</strong> — o 3 não entra em jogos regulares, impossibilitando a substituição.</p>
+    </div>
+
+    <div class="term-card" data-termo="3 preto 3 vermelho diferença especial">
+      <span class="tag">Comparativo</span>
+      <h3>O 3 Tem Papel Especial</h3>
+      <p>No Buraco, o 3 é uma carta comum. Na Tranca, o 3 tem funções estratégicas definidas: o <strong>3 preto tranca a mesa</strong> e o <strong>3 vermelho vale ±100 pontos</strong> dependendo da situação.</p>
+    </div>
+
+    <div class="term-card" data-termo="mesmo jogo nome regional regras">
+      <span class="tag">Comparativo</span>
+      <h3>Mesma Estrutura Base</h3>
+      <p>Tranca e Buraco compartilham a estrutura de Monte, Lixo, Morto, batidas e canastras. As diferenças estão nas regras específicas do 3, nas trincas e na impossibilidade de limpar canastras sujas.</p>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Pronto para jogar Tranca?</h2>
+    <p>Jogue Tranca online contra adversários reais no Jogos do Rei — direto no navegador ou pelo app. Partidas para 2 ou 4 jogadores, campeonatos diários e ranking atualizado.</p>
+    <a href="https://www.jogosdorei.com.br/jogar-tranca-online.php" target="_blank" rel="noopener">Jogar Tranca Agora — É Grátis 🔒</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>Glossário criado por <a href="https://www.jogosdorei.com.br" target="_blank" rel="noopener">Jogos do Rei</a> — a maior plataforma de jogos de cartas do Brasil desde 2010.</p>
+  <p style="margin-top:0.5rem; font-size:0.8rem;">Buraco • Canastra • Tranca • Truco — Campeonatos diários com jogadores reais.</p>
+</footer>
+
+<script>
+  function filtrarTermos() {
+    const q = document.getElementById('search').value.toLowerCase();
+    const cards = document.querySelectorAll('.term-card');
+    let found = 0;
+    cards.forEach(card => {
+      const text = (card.getAttribute('data-termo') + ' ' + card.innerText).toLowerCase();
+      const match = !q || text.includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) found++;
+    });
+    document.getElementById('no-results').style.display = (found === 0 && q) ? 'block' : 'none';
+  }
+</script>
+
+</body>
+</html>

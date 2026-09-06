@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossário do STBL — Buraco Fechado Sem Trinca e Bate com Limpa | Jogos do Rei</title>
+  <meta name="description" content="Glossário completo do STBL (Sem Trinca e Bate com Limpa): por que não vale trinca, por que a batida final exige canastra limpa, curingão, compra justificada, morto e tabela de pontos.">
+  <meta name="keywords" content="glossário stbl, sem trinca e bate com limpa, buraco fechado stbl, buraco sem trinca, canastra limpa, curingão, regras stbl">
+  <meta name="author" content="Jogos do Rei">
+  <meta property="og:title" content="Glossário do STBL — Sem Trinca e Bate com Limpa | Jogos do Rei">
+  <meta property="og:description" content="Todos os termos do Buraco Fechado STBL explicados: sem trinca, batida com canastra limpa, curingão, compra justificada, morto e pontuação.">
+  <meta property="og:url" content="https://jogosdorei.github.io/glossario-buraco/stbl.html">
+  <link rel="canonical" href="https://jogosdorei.github.io/glossario-buraco/stbl.html">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f5f0;
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #2b2559 0%, #4b45a8 100%);
+      color: white;
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+    header p { font-size: 1.1rem; opacity: 0.9; max-width: 640px; margin: 0 auto; }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 20px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+    }
+    nav {
+      background: #201b45;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      padding: 0.65rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: background 0.15s, color 0.15s;
+    }
+    nav a:hover, nav a.active {
+      background: rgba(255,255,255,0.12);
+      color: white;
+    }
+    nav a.active {
+      border-bottom: 3px solid #b9b4f0;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .intro {
+      background: white;
+      border-left: 4px solid #4b45a8;
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+    .intro a { color: #4b45a8; font-weight: 600; text-decoration: none; }
+    .intro a:hover { text-decoration: underline; }
+    .callout {
+      background: #efeefb;
+      border: 1px solid #cfcbf2;
+      border-radius: 10px;
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.98rem;
+    }
+    .callout strong { color: #2b2559; }
+    h2 {
+      font-size: 1.5rem;
+      color: #2b2559;
+      border-bottom: 2px solid #d3cff2;
+      padding-bottom: 0.5rem;
+      margin: 2.5rem 0 1.25rem;
+    }
+    h2 span { font-size: 1.1rem; margin-right: 0.5rem; }
+    .term-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 600px) {
+      .term-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .term-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-top: 3px solid #4b45a8;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .term-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .term-card h3 {
+      font-size: 1.1rem;
+      color: #2b2559;
+      margin-bottom: 0.5rem;
+    }
+    .term-card p { font-size: 0.95rem; color: #444; }
+    .term-card .tag {
+      display: inline-block;
+      background: #e3e0f8;
+      color: #4b45a8;
+      border-radius: 4px;
+      padding: 0.1rem 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .cta {
+      background: linear-gradient(135deg, #2b2559, #4b45a8);
+      color: white;
+      border-radius: 12px;
+      padding: 2rem 2rem;
+      text-align: center;
+      margin: 3rem 0 2rem;
+    }
+    .cta h2 { color: white; border: none; margin: 0 0 0.75rem; font-size: 1.4rem; }
+    .cta p { margin-bottom: 1.25rem; opacity: 0.9; font-size: 1rem; }
+    .cta a {
+      display: inline-block;
+      background: white;
+      color: #2b2559;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: opacity 0.15s;
+    }
+    .cta a:hover { opacity: 0.85; }
+    .pontos-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 1rem;
+    }
+    .pontos-table th {
+      background: #2b2559;
+      color: white;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    .pontos-table td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid #e7e4f7;
+      font-size: 0.95rem;
+    }
+    .pontos-table tr:last-child td { border-bottom: none; }
+    .pontos-table tr:nth-child(even) td { background: #f6f5fd; }
+    .pts { font-weight: 700; color: #4b45a8; }
+    .neg { font-weight: 700; color: #b23b3b; }
+    footer {
+      background: #2c2c2c;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+    footer a { color: #b9b4f0; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .search-box {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: 2px solid #cfcbf2;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-box input:focus { border-color: #4b45a8; }
+    #no-results { display: none; color: #888; text-align: center; padding: 2rem; }
+    .fonte { font-size: 0.85rem; color: #666; margin: 2rem 0 0; }
+    .fonte a { color: #4b45a8; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>♠️ Glossário do STBL</h1>
+  <p>Buraco Fechado <strong>Sem Trinca e Bate com Limpa</strong> — todos os termos da variante mais exigente da família Buraco</p>
+  <span class="badge">Referência completa • Atualizado em 2026</span>
+</header>
+
+<nav>
+  <a href="./index.html">🃏 Buraco</a>
+  <a href="./stbl.html" class="active">♠️ STBL</a>
+  <a href="./tranca.html">🔒 Tranca</a>
+  <a href="./truco.html">⚔️ Truco</a>
+  <a href="./sueca.html">🎴 Sueca</a>
+  <a href="./domino.html">🁢 Dominó</a>
+  <a href="./comparativo.html">📋 Comparativo</a>
+</nav>
+
+<div class="container">
+
+  <div class="intro">
+    <strong>STBL</strong> quer dizer <strong>“Sem Trinca e Bate com Limpa”</strong>. É uma variante do <a href="./index.html">Buraco Fechado</a> que muda apenas duas coisas — e essas duas mudanças reorganizam o jogo inteiro. Este glossário reúne os termos que você precisa para entender uma mesa de STBL, com base nas <a href="https://www.jogosdorei.com.br/regras-buraco-fechado-stbl.php" target="_blank" rel="noopener">regras oficiais publicadas no Jogos do Rei</a>.
+  </div>
+
+  <div class="callout">
+    <strong>As duas regras que definem o STBL:</strong><br>
+    1. <strong>Não vale trinca nem lavadeira.</strong> Todo jogo é sequência do mesmo naipe — três ou mais cartas seguidas.<br>
+    2. <strong>A batida final exige canastra limpa.</strong> Sem pelo menos uma canastra sem curinga na mesa, sua dupla não encerra a partida.<br>
+    <span style="display:block;margin-top:0.6rem;color:#4a4a4a;">Tudo o mais — 108 cartas, Curingão, lixo fechado, dois mortos — vem do Buraco Fechado.</span>
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="🔍 Buscar termo... (ex: trinca, canastra limpa, curingão, morto)" oninput="filtrarTermos()">
+  </div>
+  <p id="no-results">Nenhum termo encontrado. Tente outra busca.</p>
+
+  <!-- SEÇÃO: O que muda -->
+  <h2><span>♠️</span> O Que Muda no STBL</h2>
+  <div class="term-grid" id="section-stbl">
+
+    <div class="term-card" data-termo="stbl sigla significado sem trinca bate com limpa">
+      <span class="tag">Regra Central</span>
+      <h3>STBL</h3>
+      <p>Sigla de <strong>“Sem Trinca e Bate com Limpa”</strong>. Nomeia a variante do Buraco Fechado em que trincas não são aceitas e a batida final só é permitida com uma canastra limpa baixada.</p>
+    </div>
+
+    <div class="term-card" data-termo="sem trinca lavadeira mesmo numero proibido">
+      <span class="tag">Regra Central</span>
+      <h3>Sem Trinca (nem Lavadeira)</h3>
+      <p>No STBL <strong>não existem trincas</strong> — agrupar cartas do mesmo número (três 7, quatro Reis) não forma jogo. Só valem <strong>sequências do mesmo naipe</strong>. É a diferença que mais dói para quem vem do Buraco Fechado comum.</p>
+    </div>
+
+    <div class="term-card" data-termo="bate com limpa batida final canastra limpa obrigatoria">
+      <span class="tag">Regra Central</span>
+      <h3>Bate com Limpa</h3>
+      <p>Para dar a <strong>batida final</strong>, a dupla precisa ter pelo menos <strong>uma canastra limpa</strong> baixada na mesa. No Buraco Fechado comum, uma canastra suja já bastaria — no STBL, não basta.</p>
+    </div>
+
+    <div class="term-card" data-termo="jogo sequencia mesmo naipe tres cartas as antes do 2 depois do rei">
+      <span class="tag">Definição</span>
+      <h3>Jogo</h3>
+      <p>Conjunto de <strong>3 ou mais cartas do mesmo naipe em sequência</strong>. O <strong>Ás</strong> pode ser posicionado <strong>antes do 2</strong> ou <strong>depois do Rei</strong> — o que abre as duas pontas da sequência.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Estrutura -->
+  <h2><span>🎴</span> Estrutura da Mesa</h2>
+  <div class="term-grid" id="section-estrutura">
+
+    <div class="term-card" data-termo="baralho 108 cartas dois baralhos curingao joker">
+      <span class="tag">Estrutura</span>
+      <h3>Baralho</h3>
+      <p><strong>108 cartas</strong>: dois baralhos completos <strong>com o Curingão</strong> (Joker). É o mesmo baralho do Buraco Fechado.</p>
+    </div>
+
+    <div class="term-card" data-termo="jogadores 2 ou 4 duplas parceiro de frente">
+      <span class="tag">Estrutura</span>
+      <h3>Jogadores</h3>
+      <p>Mesas de <strong>2 ou 4 jogadores</strong>. Na mesa de 2, você joga contra quem está sentado à sua frente. Na de 4, formam-se duas duplas: o parceiro à frente, os adversários à esquerda e à direita.</p>
+    </div>
+
+    <div class="term-card" data-termo="monte pilha cartas restantes compra">
+      <span class="tag">Estrutura</span>
+      <h3>Monte</h3>
+      <p>Pilha das cartas que sobraram depois da distribuição aos jogadores e aos mortos. É de onde sai a compra padrão de cada turno.</p>
+    </div>
+
+    <div class="term-card" data-termo="morto dois mortos 11 cartas cada time um">
+      <span class="tag">Estrutura</span>
+      <h3>Morto</h3>
+      <p>São <strong>dois mortos</strong>, pilhas de <strong>11 cartas</strong> cada. <strong>Cada time tem direito a apenas um</strong>, concedido ao jogador que acabar com as cartas da mão. Não pegar o morto custa <strong>−100 pontos</strong> no fim.</p>
+    </div>
+
+    <div class="term-card" data-termo="lixo fechado carta do topo visivel descarte">
+      <span class="tag">Estrutura</span>
+      <h3>Lixo</h3>
+      <p>Pilha das cartas descartadas. Como o STBL é um Buraco <em>Fechado</em>, <strong>só a carta do topo fica visível</strong> — o resto do lixo é um mistério até alguém comprá-lo.</p>
+    </div>
+
+    <div class="term-card" data-termo="compra justificada carta do topo usar em jogo">
+      <span class="tag">Jogada</span>
+      <h3>Compra Justificada</h3>
+      <p>Para levar o lixo inteiro, é preciso <strong>usar a carta do topo em algum jogo</strong> naquele mesmo turno. Sem justificar a carta do topo, o lixo não sai do lugar.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Curingas -->
+  <h2><span>🃏</span> Curingas</h2>
+  <div class="term-grid" id="section-curingas">
+
+    <div class="term-card" data-termo="curinga carta 2 substitui qualquer carta">
+      <span class="tag">Curinga</span>
+      <h3>Curinga (o 2)</h3>
+      <p>A carta <strong>número 2</strong> substitui qualquer outra carta, de qualquer naipe. Cada jogo baixado na mesa aceita <strong>apenas um curinga</strong>.</p>
+    </div>
+
+    <div class="term-card" data-termo="curingao joker 50 pontos vale">
+      <span class="tag">Curinga</span>
+      <h3>Curingão (Joker)</h3>
+      <p>O <strong>Curingão</strong> vale no STBL e funciona como curinga. Vale <strong>50 pontos</strong> na contagem final — é a carta mais cara de ficar na mão.</p>
+    </div>
+
+    <div class="term-card" data-termo="2 na posicao propria carta normal nao é curinga">
+      <span class="tag">Detalhe</span>
+      <h3>2 na Própria Posição</h3>
+      <p>Se o 2 está ocupando o lugar do <strong>próprio 2</strong> dentro da sequência (por exemplo, A-2-3-4 do mesmo naipe), ele <strong>não conta como curinga</strong> — é carta normal. É por isso que uma sequência com um 2 pode ser limpa.</p>
+    </div>
+
+    <div class="term-card" data-termo="limpar canastra suja curinga mesmo naipe substituir">
+      <span class="tag">Jogada</span>
+      <h3>Limpar uma Canastra Suja</h3>
+      <p>Pelas regras oficiais, uma canastra suja <strong>pode ser limpa</strong> caso o curinga utilizado seja <strong>do mesmo naipe</strong> da sequência e a <strong>carta 2 não esteja posicionada</strong> — ou seja, o 2 não está ocupando a posição de carta 2. No STBL isso vale ouro: sem canastra limpa, sua dupla não bate.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Canastras -->
+  <h2><span>🏆</span> Os Quatro Tipos de Canastra</h2>
+  <p style="color:#666;font-size:0.95rem;margin-bottom:1.25rem;">Canastra é um jogo baixado com <strong>7 cartas ou mais</strong>. No STBL, toda canastra é necessariamente uma sequência do mesmo naipe — não há canastra de trinca.</p>
+  <div class="term-grid" id="section-canastras">
+
+    <div class="term-card" data-termo="canastra limpa sem curinga 200 pontos">
+      <span class="tag">200 pontos</span>
+      <h3>Canastra Limpa</h3>
+      <p>Sequência de <strong>7 cartas ou mais sem nenhum curinga</strong>. Vale <strong>200 pontos</strong> — e é o passaporte obrigatório para a batida final no STBL.</p>
+    </div>
+
+    <div class="term-card" data-termo="canastra suja com curinga 100 pontos">
+      <span class="tag">100 pontos</span>
+      <h3>Canastra Suja</h3>
+      <p>Sequência de <strong>7 cartas ou mais usando curinga</strong>. Vale <strong>100 pontos</strong>. Pode ser limpa depois, se o curinga for substituído nas condições certas.</p>
+    </div>
+
+    <div class="term-card" data-termo="canastra de 500 as a rei sequencia completa">
+      <span class="tag">500 pontos</span>
+      <h3>Canastra de 500</h3>
+      <p>O jogo completo de <strong>Ás a Rei</strong> no mesmo naipe. Vale <strong>500 pontos</strong>.</p>
+    </div>
+
+    <div class="term-card" data-termo="canastra de 1000 as a as volta no baralho">
+      <span class="tag">1.000 pontos</span>
+      <h3>Canastra de 1000</h3>
+      <p>O jogo de <strong>Ás a Ás</strong> — a sequência que dá a volta completa no naipe. Vale <strong>1.000 pontos</strong>, a maior pontuação de uma única mesa.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Ações -->
+  <h2><span>🎯</span> Ações e Tipos de Batida</h2>
+  <div class="term-grid" id="section-acoes">
+
+    <div class="term-card" data-termo="comprar monte lixo uma carta todas">
+      <span class="tag">Ação</span>
+      <h3>Comprar</h3>
+      <p>No começo do turno você compra <strong>uma carta do monte</strong> ou <strong>todas as cartas do lixo</strong> — nesse segundo caso, justificando a carta do topo.</p>
+    </div>
+
+    <div class="term-card" data-termo="baixar jogo mesa parceiro adicionar cartas">
+      <span class="tag">Ação</span>
+      <h3>Baixar Jogo</h3>
+      <p>Colocar uma sequência na mesa. Depois de baixado, o <strong>parceiro pode acrescentar cartas</strong> nesse mesmo jogo — é assim que uma sequência de 3 vira canastra.</p>
+    </div>
+
+    <div class="term-card" data-termo="descartar lixo encerrar turno">
+      <span class="tag">Ação</span>
+      <h3>Descartar</h3>
+      <p>Toda jogada termina com o descarte de <strong>uma carta no lixo</strong>. A carta descartada passa a ser o topo — e o que o próximo jogador vai tentar justificar.</p>
+    </div>
+
+    <div class="term-card" data-termo="batida direta ultima carta na mesa ganha morto continua">
+      <span class="tag">Batida</span>
+      <h3>Batida Direta</h3>
+      <p>A última carta da mão vai <strong>para a mesa</strong> (baixada ou encaixada em um jogo). O jogador <strong>recebe o morto na hora</strong> e pode continuar baixando.</p>
+    </div>
+
+    <div class="term-card" data-termo="batida indireta ultima carta descartada lixo morto proxima rodada">
+      <span class="tag">Batida</span>
+      <h3>Batida Indireta</h3>
+      <p>A última carta da mão é <strong>descartada no lixo</strong>. O jogador só poderá usar as cartas do morto <strong>na rodada seguinte</strong>.</p>
+    </div>
+
+    <div class="term-card" data-termo="batida final encerra partida canastra limpa morto ja pego 100 pontos">
+      <span class="tag">Batida</span>
+      <h3>Batida Final</h3>
+      <p>Encerra a partida. Só é possível se o time <strong>já pegou o morto</strong> e tem <strong>pelo menos uma canastra limpa</strong> baixada. Vale <strong>+100 pontos</strong>.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Pontuação -->
+  <h2><span>🧮</span> Tabela de Pontos</h2>
+
+  <table class="pontos-table">
+    <thead>
+      <tr>
+        <th>Evento / Carta</th>
+        <th>Pontos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Canastra de 1000 (Ás a Ás)</td><td class="pts">1.000</td></tr>
+      <tr><td>Canastra de 500 (Ás a Rei)</td><td class="pts">500</td></tr>
+      <tr><td>Canastra Limpa</td><td class="pts">200</td></tr>
+      <tr><td>Canastra Suja</td><td class="pts">100</td></tr>
+      <tr><td>Batida Final</td><td class="pts">100</td></tr>
+      <tr><td>Curingão (Joker)</td><td class="pts">50</td></tr>
+      <tr><td>Ás</td><td class="pts">15</td></tr>
+      <tr><td>Curinga (2)</td><td class="pts">10</td></tr>
+      <tr><td>Do 8 ao Rei (K)</td><td class="pts">10</td></tr>
+      <tr><td>Do 3 ao 7</td><td class="pts">5</td></tr>
+      <tr><td>Não pegar o morto</td><td class="neg">−100</td></tr>
+      <tr><td>Cartas que sobraram na mão</td><td class="neg">valor negativo</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:0.88rem;color:#666;margin-bottom:2rem;"><em>* Vence o time que somar mais pontos. Para conferir uma partida real sem fazer conta de cabeça, use a <a href="https://www.jogosdorei.com.br/calculadora-pontos-buraco.php" target="_blank" rel="noopener" style="color:#4b45a8;">calculadora de pontos do Buraco</a>.</em></p>
+
+  <!-- SEÇÃO: Mesa -->
+  <h2><span>⏱️</span> Ritmo e Conduta na Mesa Online</h2>
+  <div class="term-grid" id="section-mesa">
+
+    <div class="term-card" data-termo="limite de tempo 30 segundos comprar 1 minuto baixar descartar">
+      <span class="tag">Mesa Online</span>
+      <h3>Limites de Tempo</h3>
+      <p>Na sua vez você tem <strong>30 segundos</strong> para comprar do monte ou do lixo e <strong>1 minuto</strong> para baixar jogos e descartar.</p>
+    </div>
+
+    <div class="term-card" data-termo="jogada automatica computador compra monte descarta ultima carta">
+      <span class="tag">Mesa Online</span>
+      <h3>Jogada Automática</h3>
+      <p>Se o tempo estoura, o sistema joga por você — e não é sorteio: na etapa da compra ele <strong>compra do monte</strong> (nunca do lixo); na etapa do descarte ele <strong>descarta a última carta que entrou na mão</strong>, normalmente a que você acabou de comprar. Se essa carta não puder ser descartada, ele descarta a anterior.</p>
+    </div>
+
+    <div class="term-card" data-termo="quarta jogada automatica eliminacao contagem separada">
+      <span class="tag">Atenção</span>
+      <h3>A Quarta Elimina</h3>
+      <p>As jogadas automáticas são contadas: na <strong>quarta</strong> da mesma partida o jogador é eliminado — três não eliminam. Compra e descarte têm <strong>contagens separadas</strong>, então um turno inteiro perdido pode valer <strong>duas</strong>. Elas não precisam ser seguidas e só zeram quando começa uma nova partida.</p>
+    </div>
+
+    <div class="term-card" data-termo="cantar jogo proibido instrucao parceiro chat conduta">
+      <span class="tag">Conduta</span>
+      <h3>Cantar Jogo</h3>
+      <p>É <strong>proibido</strong> “cantar jogo”: passar instrução direta ao parceiro ou dizer quais cartas você tem na mão. Ofensas e abuso no chat rendem bloqueio temporário ou banimento da conta.</p>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Quer treinar o STBL?</h2>
+    <p>O Jogos do Rei tem mesas separadas para as três modalidades de Buraco — aberto, Fechado e Fechado STBL — contra adversários reais, no navegador ou pelo app.</p>
+    <a href="https://www.jogosdorei.com.br/regras-buraco-fechado-stbl.php" target="_blank" rel="noopener">Ver as regras oficiais do STBL ♠️</a>
+  </div>
+
+  <p class="fonte">Conteúdo baseado nas <a href="https://www.jogosdorei.com.br/regras-buraco-fechado-stbl.php" target="_blank" rel="noopener">regras oficiais do Buraco Fechado Sem Trinca publicadas no Jogos do Rei</a>, conferidas em 1º de setembro de 2026.</p>
+
+</div>
+
+<footer>
+  <p>Glossário criado por <a href="https://www.jogosdorei.com.br" target="_blank" rel="noopener">Jogos do Rei</a> — plataforma brasileira de jogos de cartas online, no ar desde 2010.</p>
+  <p style="margin-top:0.5rem; font-size:0.8rem;">Buraco • Canastra • Tranca • Truco • STBL • Sueca • Dominó</p>
+</footer>
+
+<script>
+  function filtrarTermos() {
+    const q = document.getElementById('search').value.toLowerCase();
+    const cards = document.querySelectorAll('.term-card');
+    let found = 0;
+    cards.forEach(card => {
+      const text = (card.getAttribute('data-termo') + ' ' + card.innerText).toLowerCase();
+      const match = !q || text.includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) found++;
+    });
+    document.getElementById('no-results').style.display = (found === 0 && q) ? 'block' : 'none';
+  }
+</script>
+
+</body>
+</html>

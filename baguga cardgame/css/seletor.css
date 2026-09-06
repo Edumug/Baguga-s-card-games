@@ -1,0 +1,142 @@
+.seletor {
+    width: min(1050px, 94%);
+    margin: auto;
+    padding: 45px 0;
+}
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+.cabecalho span, .variacoes > span {
+    color: #8a95a8;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+h1 {
+    margin-top: 5px;
+    font-size: 34px;
+}
+.codigo {
+    padding: 12px 18px;
+    border-radius: 12px;
+    background: #171e29;
+    color: #858fa2;
+}
+.codigo strong {
+    color: white;
+    margin-left: 8px;
+    letter-spacing: 2px;
+}
+.jogos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.jogo-card {
+    min-height: 175px;
+    padding: 22px;
+    text-align: left;
+    color: white;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 17px;
+    cursor: pointer;
+    transition: transform 0.18s, border 0.18s, background 0.18s, box-shadow 0.18s;
+}
+.jogo-card:hover {
+    transform: translateY(-4px);
+    background: #202a38;
+}
+.jogo-card.selecionado {
+    border: 2px solid #7189aa;
+    background: #202c3d;
+    box-shadow: 0 0 20px rgba(113,137,170,0.2);
+}
+.icone {
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+.nome {
+    font-size: 21px;
+    font-weight: bold;
+}
+.descricao {
+    margin-top: 7px;
+    color: #8792a5;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.jogadores {
+    display: block;
+    margin-top: 14px;
+    color: #c9a75d;
+    font-size: 11px;
+}
+.variacoes {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #303b4c;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+    background: #171e29;
+}
+.mensagem {
+    min-height: 25px;
+    margin-top: 15px;
+    color: #aab4c5;
+    font-size: 13px;
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+}
+footer button {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+.voltar {
+    background: #242d3b;
+}
+.voltar:hover {
+    background: #364358;
+}
+.confirmar {
+    flex: 1;
+    max-width: 350px;
+    background: linear-gradient(135deg, #4b6587, #34475f);
+}
+.confirmar:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+@media(max-width: 750px) {
+    .jogos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width: 500px) {
+    .jogos {
+        grid-template-columns: 1fr;
+    }
+    .cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}

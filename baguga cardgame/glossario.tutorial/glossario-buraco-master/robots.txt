@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jogosdorei.github.io/glossario-buraco/sitemap.xml

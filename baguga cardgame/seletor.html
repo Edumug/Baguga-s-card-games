@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolher jogo</title>
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/seletor.css">
+</head>
+<body>
+
+<main class="seletor">
+    <header class="cabecalho">
+        <div><span>PRÓXIMA PARTIDA</span><h1>Escolha o jogo</h1></div>
+        <div class="codigo">Sala <strong id="codigoSala">-----</strong></div>
+    </header>
+
+    <section class="jogos">
+        <button class="jogo-card" data-jogo="truco">
+            <div class="icone">🃏</div><div class="nome">Truco</div>
+            <div class="descricao">Chegue a 12 pontos vencendo mãos e aumentando a aposta.</div>
+            <small class="jogadores">4 jogadores</small>
+        </button>
+        <button class="jogo-card" data-jogo="blackjack">
+            <div class="icone">🂡</div><div class="nome">Blackjack</div>
+            <div class="descricao">Chegue o mais perto de 21 sem ultrapassar.</div>
+            <small class="jogadores">1 a 7 jogadores + dealer</small>
+        </button>
+        <button class="jogo-card" data-jogo="pife">
+            <div class="icone">🂡</div><div class="nome">Pife</div>
+            <div class="descricao">Forme trincas e sequências e bata primeiro.</div>
+            <small class="jogadores">2 a 4 jogadores</small>
+        </button>
+        <button class="jogo-card" data-jogo="buraco">
+            <div class="icone">♦️</div><div class="nome">Buraco</div>
+            <div class="descricao">Forme sequências e canastras para pontuar.</div>
+            <small class="jogadores">2 ou 4 jogadores</small>
+        </button>
+        <button class="jogo-card" data-jogo="poker">
+            <div class="icone">♣️</div><div class="nome">Poker</div>
+            <div class="descricao">Forme a melhor mão de 5 cartas.</div>
+            <small class="jogadores">2 a 8 jogadores</small>
+        </button>
+    </section>
+
+    <section id="variacoesBox" class="variacoes">
+        <span>VARIAÇÃO</span>
+        <select id="seletorVariacao"></select>
+    </section>
+
+    <p id="mensagem" class="mensagem"></p>
+
+    <footer>
+        <button id="btnVoltar" class="voltar">Voltar</button>
+        <button id="btnConfirmar" class="confirmar" disabled>Confirmar jogo</button>
+    </footer>
+</main>
+
+<script type="module" src="js/seletor.js?v=2"></script>
+</body>
+</html>

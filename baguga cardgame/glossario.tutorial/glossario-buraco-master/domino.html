@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossário de Dominó — Termos do Jogo | Jogos do Rei</title>
+  <meta name="description" content="Glossário completo do Dominó: peça, sena dupla, pontas abertas, passe, batida, tranca, pintas e partida até 50 pontos. Jogue Dominó online no Jogos do Rei.">
+  <meta name="keywords" content="glossário dominó, termos dominó, sena dupla, pontas abertas, passe dominó, batida dominó, tranca dominó, carroça, regras dominó">
+  <meta name="author" content="Jogos do Rei">
+  <meta property="og:title" content="Glossário de Dominó — Jogos do Rei">
+  <meta property="og:description" content="Todos os termos do Dominó explicados: peça, sena dupla, pontas abertas, passe, batida, tranca, pintas e muito mais.">
+  <meta property="og:url" content="https://jogosdorei.github.io/glossario-buraco/domino.html">
+  <link rel="canonical" href="https://jogosdorei.github.io/glossario-buraco/domino.html">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f5f0;
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #7a4a10 0%, #b5751a 100%);
+      color: white;
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+    header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 20px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+    }
+    nav {
+      background: #5e3a0c;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      padding: 0.65rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: background 0.15s, color 0.15s;
+    }
+    nav a:hover, nav a.active {
+      background: rgba(255,255,255,0.12);
+      color: white;
+    }
+    nav a.active {
+      border-bottom: 3px solid #e8c48f;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .intro {
+      background: white;
+      border-left: 4px solid #b5751a;
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+    .intro a { color: #b5751a; font-weight: 600; text-decoration: none; }
+    .intro a:hover { text-decoration: underline; }
+    h2 {
+      font-size: 1.5rem;
+      color: #7a4a10;
+      border-bottom: 2px solid #ecdcc2;
+      padding-bottom: 0.5rem;
+      margin: 2.5rem 0 1.25rem;
+    }
+    h2 span { font-size: 1.1rem; margin-right: 0.5rem; }
+    .term-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 600px) {
+      .term-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .term-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-top: 3px solid #b5751a;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .term-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .term-card h3 {
+      font-size: 1.1rem;
+      color: #7a4a10;
+      margin-bottom: 0.5rem;
+    }
+    .term-card p { font-size: 0.95rem; color: #444; }
+    .term-card .tag {
+      display: inline-block;
+      background: #f4e6cf;
+      color: #b5751a;
+      border-radius: 4px;
+      padding: 0.1rem 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .cta {
+      background: linear-gradient(135deg, #7a4a10, #b5751a);
+      color: white;
+      border-radius: 12px;
+      padding: 2rem 2rem;
+      text-align: center;
+      margin: 3rem 0 2rem;
+    }
+    .cta h2 { color: white; border: none; margin: 0 0 0.75rem; font-size: 1.4rem; }
+    .cta p { margin-bottom: 1.25rem; opacity: 0.9; font-size: 1rem; }
+    .cta a {
+      display: inline-block;
+      background: white;
+      color: #7a4a10;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: opacity 0.15s;
+    }
+    .cta a:hover { opacity: 0.85; }
+    .pontos-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 1rem;
+    }
+    .pontos-table th {
+      background: #7a4a10;
+      color: white;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    .pontos-table td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid #f0e6d6;
+      font-size: 0.95rem;
+    }
+    .pontos-table tr:last-child td { border-bottom: none; }
+    .pontos-table tr:nth-child(even) td { background: #fbf6ee; }
+    .pts { font-weight: 700; color: #b5751a; }
+    .rank { font-weight: 700; color: #7a4a10; }
+    footer {
+      background: #2c2c2c;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+    footer a { color: #e8c48f; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .search-box {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: 2px solid #e0cba6;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-box input:focus { border-color: #b5751a; }
+    #no-results { display: none; color: #888; text-align: center; padding: 2rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🁢 Glossário de Dominó</h1>
+  <p>Todos os termos, regras e expressões do Dominó explicados de forma clara</p>
+  <span class="badge">Referência completa • Atualizado em 2026</span>
+</header>
+
+<nav>
+  <a href="./index.html">🃏 Buraco</a>
+  <a href="./stbl.html">♠️ STBL</a>
+  <a href="./tranca.html">🔒 Tranca</a>
+  <a href="./truco.html">⚔️ Truco</a>
+  <a href="./sueca.html">🎴 Sueca</a>
+  <a href="./domino.html" class="active">🁢 Dominó</a>
+  <a href="./comparativo.html">📋 Comparativo</a>
+</nav>
+
+<div class="container">
+
+  <div class="intro">
+    <strong>Dominó</strong> é um dos jogos de mesa mais populares do Brasil, jogado com um conjunto de <strong>28 peças</strong> por <strong>4 jogadores em 2 duplas</strong>, com os parceiros sentados de frente um para o outro. Simples de aprender e difícil de dominar: envolve encaixar peças nas <strong>pontas abertas</strong>, bater primeiro e evitar ser pego com muitas pintas na mão. Consulte as <a href="https://www.jogosdorei.com.br/regras-domino.php" target="_blank" rel="noopener">regras oficiais do Dominó</a> ou jogue online gratuitamente no <a href="https://www.jogosdorei.com.br" target="_blank" rel="noopener">Jogos do Rei</a>.
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="🔍 Buscar termo... (ex: sena dupla, ponta, passe, batida)" oninput="filtrarTermos()">
+  </div>
+  <p id="no-results">Nenhum termo encontrado. Tente outra busca.</p>
+
+  <!-- SEÇÃO: Estrutura -->
+  <h2><span>🁢</span> Estrutura do Jogo</h2>
+  <div class="term-grid" id="section-estrutura">
+
+    <div class="term-card" data-termo="peça pedra dominó 28 dois lados números">
+      <span class="tag">Estrutura</span>
+      <h3>Peça</h3>
+      <p>Cada <strong>peça</strong> de dominó tem dois lados com números (pintas) de 0 a 6. O conjunto clássico tem <strong>28 peças</strong>, que vão da <strong>0-0 (branca)</strong> até a <strong>6-6 (a sena dupla)</strong>.</p>
+    </div>
+
+    <div class="term-card" data-termo="jogadores dupla parceiro 4 frente anti-horário">
+      <span class="tag">Estrutura</span>
+      <h3>Jogadores e Duplas</h3>
+      <p>Sempre <strong>4 jogadores</strong> formando <strong>2 duplas</strong>. Os parceiros sentam de frente um para o outro; cada jogador tem um adversário à direita e outro à esquerda. O jogo segue em <strong>sentido anti-horário</strong>.</p>
+    </div>
+
+    <div class="term-card" data-termo="distribuição 7 peças cada sem dorme monte compra">
+      <span class="tag">Estrutura</span>
+      <h3>Distribuição</h3>
+      <p>No início da rodada, cada jogador recebe <strong>7 peças</strong>. Todas as 28 peças são distribuídas — <strong>não sobra dorme</strong> (monte de compra) nesta modalidade.</p>
+    </div>
+
+    <div class="term-card" data-termo="sena dupla 6-6 seis carroça mais alta">
+      <span class="tag">Peça Especial</span>
+      <h3>Sena Dupla (6-6)</h3>
+      <p>A peça <strong>6-6</strong> é a "sena dupla" — a peça de maior valor do jogo (12 pintas). Na primeira rodada da partida, quem tem a sena dupla é obrigado a começar, jogando-a como primeira peça da mesa.</p>
+    </div>
+
+    <div class="term-card" data-termo="carroças peças duplas mesmo número valor alto">
+      <span class="tag">Peça Especial</span>
+      <h3>Carroças (Duplas)</h3>
+      <p>As peças <strong>duplas</strong> (0-0, 1-1, 2-2 … 6-6) são as "carroças". As de valor alto (6-6, 5-5) pesam muito na mão numa tranca — por isso convém jogá-las cedo.</p>
+    </div>
+
+    <div class="term-card" data-termo="pintas pontos soma peça valor números">
+      <span class="tag">Pontuação</span>
+      <h3>Pintas (Pontos)</h3>
+      <p>As <strong>pintas</strong> são os pontos marcados em cada peça — a soma dos dois lados. É essa soma que conta na pontuação: quem bate marca as pintas que sobraram nas mãos dos adversários.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Como se joga -->
+  <h2><span>🀱</span> Como se Joga</h2>
+  <div class="term-grid" id="section-jogadas">
+
+    <div class="term-card" data-termo="pontas abertas duas mesa encaixar número coincide">
+      <span class="tag">Regra Central</span>
+      <h3>Pontas Abertas</h3>
+      <p>A mesa tem <strong>duas pontas abertas</strong>. Na sua vez, você deve encaixar uma peça cujo número <strong>coincida com o valor de uma das pontas</strong>. As duas pontas ficam disponíveis a cada jogada — você decide em qual jogar.</p>
+    </div>
+
+    <div class="term-card" data-termo="encaixar jogar peça ponta coincidir valor">
+      <span class="tag">Jogada</span>
+      <h3>Encaixar</h3>
+      <p>Colocar uma peça em uma das pontas, casando o número. Se uma ponta mostra um 5, você pode encaixar ali qualquer peça que tenha um 5 (como 5-2 ou 5-6), prolongando o jogo por aquele lado.</p>
+    </div>
+
+    <div class="term-card" data-termo="passe automático não tem peça obrigado passar vez">
+      <span class="tag">Jogada</span>
+      <h3>Passe</h3>
+      <p>Se na sua vez você não tem nenhuma peça que encaixe em qualquer das pontas, ocorre o <strong>passe automático</strong>: você passa a vez sem jogar. O passe revela à mesa que você não tem os valores das pontas.</p>
+    </div>
+
+    <div class="term-card" data-termo="quem começa 6-6 sena dupla primeira rodada partida">
+      <span class="tag">Regra</span>
+      <h3>Quem Começa</h3>
+      <p>Na <strong>primeira rodada</strong> da partida, começa quem tiver a <strong>6-6</strong> (sena dupla). Nas rodadas seguintes, começa <strong>quem bateu</strong> a rodada anterior — ou, se terminou em tranca, quem fez a última jogada da dupla vencedora.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Fim da rodada -->
+  <h2><span>🏆</span> Como Termina a Rodada</h2>
+  <div class="term-grid" id="section-fim">
+
+    <div class="term-card" data-termo="batida bater primeiro sem peças mão dupla marca pontos">
+      <span class="tag">Fim de Rodada</span>
+      <h3>Batida</h3>
+      <p><strong>Bater</strong> é ser o primeiro jogador a ficar sem peças na mão. A rodada termina na hora e a dupla do batedor marca a <strong>soma das pintas que sobraram nas mãos dos dois adversários</strong>.</p>
+    </div>
+
+    <div class="term-card" data-termo="peças parceiro não contam somam apenas adversários">
+      <span class="tag">Regra</span>
+      <h3>Peças do Parceiro</h3>
+      <p>Detalhe importante: as peças que sobraram na mão do <strong>seu parceiro NÃO contam</strong> contra a sua dupla. Somam apenas as peças que sobraram nas mãos dos <strong>adversários</strong>.</p>
+    </div>
+
+    <div class="term-card" data-termo="tranca jogo fechado ninguém encaixa mesa travada">
+      <span class="tag">Fim de Rodada</span>
+      <h3>Tranca (Jogo Fechado)</h3>
+      <p>Quando <strong>nenhum dos quatro jogadores</strong> consegue encaixar peça nas pontas, a mesa <strong>tranca</strong>: a rodada acaba sem ninguém bater. A vitória é decidida pela contagem das peças na mão.</p>
+    </div>
+
+    <div class="term-card" data-termo="contagem tranca menos pontos vence leva soma adversária">
+      <span class="tag">Regra</span>
+      <h3>Contagem na Tranca</h3>
+      <p>Na tranca, cada dupla soma as pintas das peças na mão dos seus dois jogadores. Vence a dupla com <strong>menos pontos</strong>, que leva a soma dos pontos da dupla adversária.</p>
+    </div>
+
+    <div class="term-card" data-termo="empate tranca dupla que trancou perde regra desempate">
+      <span class="tag">Regra</span>
+      <h3>Empate na Tranca</h3>
+      <p>Se houver <strong>empate na contagem</strong> da tranca, a dupla que <strong>trancou o jogo perde</strong> a rodada — regra que pune quem fecha a mesa sem real vantagem.</p>
+    </div>
+
+    <div class="term-card" data-termo="partida 50 pontos vence fim de jogo acumula rodadas">
+      <span class="tag">Fim de Jogo</span>
+      <h3>Partida até 50 Pontos</h3>
+      <p>A partida é disputada <strong>até 50 pontos</strong>. Os pontos da batida ou da tranca vão se acumulando rodada a rodada. Vence a partida a dupla que atingir ou ultrapassar os <strong>50 pontos</strong>.</p>
+    </div>
+
+  </div>
+
+  <!-- SEÇÃO: Valor das peças -->
+  <h2><span>📊</span> Valor das Peças (Pintas)</h2>
+
+  <table class="pontos-table">
+    <thead>
+      <tr>
+        <th>Peça</th>
+        <th>Pintas (soma)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>6-6 (sena dupla)</td><td class="pts">12</td></tr>
+      <tr><td>6-5</td><td class="pts">11</td></tr>
+      <tr><td>6-4 / 5-5</td><td class="pts">10</td></tr>
+      <tr><td>5-4 / 6-3</td><td class="pts">9</td></tr>
+      <tr><td>...</td><td>...</td></tr>
+      <tr><td>1-0</td><td class="pts">1</td></tr>
+      <tr><td>0-0 (branca)</td><td class="pts">0</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:0.88rem;color:#666;margin-bottom:2rem;"><em>* As pintas de cada peça são a soma dos seus dois lados. Há sete peças com cada número (por exemplo, sete peças com um "4": 4-0, 4-1, 4-2, 4-3, 4-4, 4-5 e 4-6).</em></p>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Pronto para jogar Dominó?</h2>
+    <p>Jogue Dominó online contra adversários reais no Jogos do Rei — direto no navegador ou pelo app. Sala Livre, partidas ranqueadas e torneios com rankings, ligas e troféus.</p>
+    <a href="https://www.jogosdorei.com.br" target="_blank" rel="noopener">Jogar Dominó Agora — É Grátis 🁢</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>Glossário criado por <a href="https://www.jogosdorei.com.br" target="_blank" rel="noopener">Jogos do Rei</a> — a maior plataforma de jogos de cartas do Brasil desde 2010.</p>
+  <p style="margin-top:0.5rem; font-size:0.8rem;">Buraco • Canastra • Tranca • Truco • Sueca • Dominó — Campeonatos diários com jogadores reais.</p>
+</footer>
+
+<script>
+  function filtrarTermos() {
+    const q = document.getElementById('search').value.toLowerCase();
+    const cards = document.querySelectorAll('.term-card');
+    let found = 0;
+    cards.forEach(card => {
+      const text = (card.getAttribute('data-termo') + ' ' + card.innerText).toLowerCase();
+      const match = !q || text.includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) found++;
+    });
+    document.getElementById('no-results').style.display = (found === 0 && q) ? 'block' : 'none';
+  }
+</script>
+
+</body>
+</html>
