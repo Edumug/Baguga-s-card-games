@@ -2,6 +2,14 @@
     const mao = document.getElementById("minhasCartas");
     if (!mao) return;
 
+    const estilo = document.createElement("style");
+    estilo.textContent = `
+        #minhasCartas .carta-arrastavel { cursor: grab; user-select: none; }
+        #minhasCartas .carta-arrastavel:active { cursor: grabbing; }
+        #minhasCartas .arrastando { opacity: .55; transform: translateY(-8px); }
+    `;
+    document.head.appendChild(estilo);
+
     const params = new URLSearchParams(location.search);
     const codigo = params.get("codigo") || "sem-sala";
     const jogadorId = sessionStorage.getItem("jogadorId") || "jogador";
@@ -11,11 +19,6 @@
     let mudou = false;
     let aplicando = false;
     let timerAplicar = null;
-
-    function chaveCarta(carta, indice) {
-        const valor = carta.dataset.ordemCarta || carta.textContent.trim();
-        return `${valor}#${indice}`;
-    }
 
     function listaChaves() {
         const ocorrencias = {};
@@ -69,7 +72,7 @@
         });
         mapa.forEach(carta => ordenadas.push(carta));
 
-        if (ordenadas.length !== cartas.length || ordenadas.some((c, i) => c !== cartas[i])) {
+        if (ordenadas.some((carta, i) => carta !== cartas[i])) {
             aplicando = true;
             ordenadas.forEach(carta => mao.appendChild(carta));
             aplicando = false;
