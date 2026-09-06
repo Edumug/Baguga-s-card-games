@@ -32,8 +32,7 @@ let jogoSelecionado = null;
 
 function atualizarVariacoes() {
     variacao.innerHTML = "";
-    const lista = variacoes[jogoSelecionado] || [];
-    lista.forEach(([valor, texto]) => {
+    (variacoes[jogoSelecionado] || []).forEach(([valor, texto]) => {
         const option = document.createElement("option");
         option.value = valor;
         option.textContent = texto;
@@ -67,7 +66,6 @@ btnConfirmar.addEventListener("click", async () => {
         const sala = snapshot.val();
         sala.jogadores ??= {};
 
-        // Garante que o jogador existe
         if (!sala.jogadores[jogadorId]) {
             const ordens = Object.values(sala.jogadores).map(j => j.ordem || 0);
             const jogadorRestaurado = {
@@ -83,7 +81,6 @@ btnConfirmar.addEventListener("click", async () => {
 
         const jogador = sala.jogadores[jogadorId];
         const souDono = jogador?.dono === true || sala.dono === jogadorId;
-
         if (!souDono) {
             mensagem.textContent = "Somente o dono pode iniciar.";
             btnConfirmar.disabled = false;
@@ -92,7 +89,8 @@ btnConfirmar.addEventListener("click", async () => {
 
         const quantidade = Object.keys(sala.jogadores || {}).length;
         const limites = {
-            truco: [4, 4],
+            // 2 = mano a mano; 4 = duas duplas.
+            truco: [2, 4],
             buraco: [2, 4],
             poker: [2, 8],
             blackjack: [1, 7],
