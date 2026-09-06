@@ -37,6 +37,13 @@ if (codigo && jogadorId) {
         seqAdversario.innerHTML = "";
         seqPropria.innerHTML = "";
 
+        /* No Buraco de 4 jogadores, a sua dupla fica sempre à DIREITA
+           da mesa (lado esquerdo da dupla adversária). */
+        seqPropria.style.right = "-270px";
+        seqPropria.style.left = "auto";
+        seqAdversario.style.left = "-270px";
+        seqAdversario.style.right = "auto";
+
         const ids = estadoAtual.ids || Object.keys(jogadores);
         const minhaDupla = duplaDe(ids, jogadorId);
 
@@ -49,14 +56,23 @@ if (codigo && jogadorId) {
             const section = document.createElement("div");
             section.className = `sequencia-grupo ${propria ? "sequencia-propria" : "sequencia-adversaria"}`;
 
+            /* Azul = sua dupla | Vermelho = dupla adversária */
+            section.style.border = propria ? "2px solid #2563eb" : "2px solid #ef4444";
+            section.style.background = propria ? "#eff6ff" : "#fef2f2";
+            section.style.borderRadius = "8px";
+
             const titulo = document.createElement("div");
             titulo.className = "sequencia-titulo";
-            titulo.textContent = propria ? `Suas sequências${ids.length === 4 ? " (sua dupla)" : ""}` : `Sequências de ${nomesDaDupla(ids, dupla) || `Dupla ${dupla + 1}`}`;
+            titulo.style.color = propria ? "#2563eb" : "#dc2626";
+            titulo.textContent = propria
+                ? `Sua dupla${ids.length === 4 ? " — suas sequências" : ""}`
+                : `Dupla adversária — ${nomesDaDupla(ids, dupla) || `Dupla ${dupla + 1}`}`;
             section.appendChild(titulo);
 
             lista.forEach((grupo, grupoIndice) => {
                 const jogo = document.createElement("div");
                 jogo.className = `jogo-baixado ${propria ? "jogo-proprio" : ""}`;
+                jogo.style.border = propria ? "1px solid #60a5fa" : "1px solid #f87171";
 
                 if (propria) {
                     jogo.title = "Clique para encaixar as cartas selecionadas";
